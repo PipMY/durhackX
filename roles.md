@@ -2,8 +2,6 @@
 
 > **Challenge:** “Meet in the Middle” — design a tool that finds the optimal meeting location for a global team, balancing **CO₂ emissions** and **fairness** in travel time.
 
-Our dataset is **now local** and stored within the repository — no AWS setup required.
-
 ---
 
 ## 🧩 Team Overview
