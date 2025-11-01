@@ -1,12 +1,12 @@
 import polars as pl
 
 if __name__ == "__main__":
-    # in your code, copy the files to your local environment and update the paths accordingly
-    schedule_file = "s3://qrt-durhack2025-challenge-data/schedules/2024/01/20.csv"
-    emissions_file = "s3://qrt-durhack2025-challenge-data/emissions.csv"
-    
-    # read in csv files using polars
-    schedules = pl.scan_csv(schedule_file, infer_schema_length=10000)
+    # in your code, copy the files to your local environment and update the paths accordingly
+    schedule_files = "data/raw/[0-9]*.csv"
+    emissions_file = "data/raw/emissions.csv"
+
+    # read in csv files using polars
+    schedules = pl.scan_csv(schedule_files, infer_schema_length=10000)
     emissions = pl.scan_csv(emissions_file, infer_schema_length=10000)
     
     print(schedules)
