@@ -1,0 +1,1791 @@
+{
+  "offices": [
+    {
+      "office_name": "New York",
+      "airport_code": "JFK",
+      "coordinates": {
+        "latitude": 40.6413,
+        "longitude": -73.7781
+      },
+      "distances_to_other_offices": [
+        {
+          "office_name": "London",
+          "airport_code": "LHR",
+          "distance_km": 5567,
+          "distance_miles": 3460,
+          "estimated_travel_time_hours": 7.0,
+          "co2_kg": 500,
+          "estimated_price_gbp": 890.72
+        },
+        {
+          "office_name": "Paris",
+          "airport_code": "CDG",
+          "distance_km": 5837,
+          "distance_miles": 3628,
+          "estimated_travel_time_hours": 7.5,
+          "co2_kg": 520,
+          "estimated_price_gbp": 933.92
+        },
+        {
+          "office_name": "Mumbai",
+          "airport_code": "BOM",
+          "distance_km": 11730,
+          "distance_miles": 7289,
+          "estimated_travel_time_hours": 15.5,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1876.8
+        },
+        {
+          "office_name": "Dubai",
+          "airport_code": "DXB",
+          "distance_km": 11000,
+          "distance_miles": 6840,
+          "estimated_travel_time_hours": 14.0,
+          "co2_kg": 1100,
+          "estimated_price_gbp": 1760.0
+        },
+        {
+          "office_name": "Singapore",
+          "airport_code": "SIN",
+          "distance_km": 15300,
+          "distance_miles": 9500,
+          "estimated_travel_time_hours": 18.0,
+          "co2_kg": 1600,
+          "estimated_price_gbp": 2448.0
+        },
+        {
+          "office_name": "Hong Kong",
+          "airport_code": "HKG",
+          "distance_km": 12950,
+          "distance_miles": 8045,
+          "estimated_travel_time_hours": 16.0,
+          "co2_kg": 1400,
+          "estimated_price_gbp": 2072.0
+        },
+        {
+          "office_name": "Shanghai",
+          "airport_code": "PVG",
+          "distance_km": 11700,
+          "distance_miles": 7270,
+          "estimated_travel_time_hours": 15.5,
+          "co2_kg": 1300,
+          "estimated_price_gbp": 1872.0
+        },
+        {
+          "office_name": "Zurich",
+          "airport_code": "ZRH",
+          "distance_km": 6370,
+          "distance_miles": 3959,
+          "estimated_travel_time_hours": 8.0,
+          "co2_kg": 540,
+          "estimated_price_gbp": 1019.2
+        },
+        {
+          "office_name": "Geneva",
+          "airport_code": "GVA",
+          "distance_km": 6290,
+          "distance_miles": 3907,
+          "estimated_travel_time_hours": 8.0,
+          "co2_kg": 530,
+          "estimated_price_gbp": 1006.4
+        },
+        {
+          "office_name": "Aarhus",
+          "airport_code": "AAR",
+          "distance_km": 6230,
+          "distance_miles": 3872,
+          "estimated_travel_time_hours": 8.0,
+          "co2_kg": 520,
+          "estimated_price_gbp": 996.8
+        },
+        {
+          "office_name": "Sydney",
+          "airport_code": "SYD",
+          "distance_km": 15980,
+          "distance_miles": 9930,
+          "estimated_travel_time_hours": 20.0,
+          "co2_kg": 1700,
+          "estimated_price_gbp": 2556.8
+        },
+        {
+          "office_name": "Wroclaw",
+          "airport_code": "WRO",
+          "distance_km": 6370,
+          "distance_miles": 3959,
+          "estimated_travel_time_hours": 8.5,
+          "co2_kg": 540,
+          "estimated_price_gbp": 1019.2
+        },
+        {
+          "office_name": "Budapest",
+          "airport_code": "BUD",
+          "distance_km": 6470,
+          "distance_miles": 4020,
+          "estimated_travel_time_hours": 8.5,
+          "co2_kg": 550,
+          "estimated_price_gbp": 1035.2
+        }
+      ]
+    },
+    {
+      "office_name": "London",
+      "airport_code": "LHR",
+      "coordinates": {
+        "latitude": 51.47,
+        "longitude": -0.4543
+      },
+      "distances_to_other_offices": [
+        {
+          "office_name": "New York",
+          "airport_code": "JFK",
+          "distance_km": 5567,
+          "distance_miles": 3460,
+          "estimated_travel_time_hours": 7.0,
+          "co2_kg": 500,
+          "estimated_price_gbp": 890.72
+        },
+        {
+          "office_name": "Paris",
+          "airport_code": "CDG",
+          "distance_km": 344,
+          "distance_miles": 214,
+          "estimated_travel_time_hours": 1.0,
+          "co2_kg": 30,
+          "estimated_price_gbp": 55.04
+        },
+        {
+          "office_name": "Mumbai",
+          "airport_code": "BOM",
+          "distance_km": 7200,
+          "distance_miles": 4474,
+          "estimated_travel_time_hours": 9.5,
+          "co2_kg": 800,
+          "estimated_price_gbp": 1152.0
+        },
+        {
+          "office_name": "Dubai",
+          "airport_code": "DXB",
+          "distance_km": 5500,
+          "distance_miles": 3420,
+          "estimated_travel_time_hours": 7.0,
+          "co2_kg": 600,
+          "estimated_price_gbp": 880.0
+        },
+        {
+          "office_name": "Singapore",
+          "airport_code": "SIN",
+          "distance_km": 10840,
+          "distance_miles": 6736,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1734.4
+        },
+        {
+          "office_name": "Hong Kong",
+          "airport_code": "HKG",
+          "distance_km": 9600,
+          "distance_miles": 5965,
+          "estimated_travel_time_hours": 11.5,
+          "co2_kg": 1100,
+          "estimated_price_gbp": 1536.0
+        },
+        {
+          "office_name": "Shanghai",
+          "airport_code": "PVG",
+          "distance_km": 9200,
+          "distance_miles": 5720,
+          "estimated_travel_time_hours": 11.0,
+          "co2_kg": 1050,
+          "estimated_price_gbp": 1472.0
+        },
+        {
+          "office_name": "Zurich",
+          "airport_code": "ZRH",
+          "distance_km": 890,
+          "distance_miles": 553,
+          "estimated_travel_time_hours": 2.0,
+          "co2_kg": 50,
+          "estimated_price_gbp": 142.4
+        },
+        {
+          "office_name": "Geneva",
+          "airport_code": "GVA",
+          "distance_km": 830,
+          "distance_miles": 516,
+          "estimated_travel_time_hours": 1.5,
+          "co2_kg": 50,
+          "estimated_price_gbp": 132.8
+        },
+        {
+          "office_name": "Aarhus",
+          "airport_code": "AAR",
+          "distance_km": 900,
+          "distance_miles": 560,
+          "estimated_travel_time_hours": 2.0,
+          "co2_kg": 55,
+          "estimated_price_gbp": 144.0
+        },
+        {
+          "office_name": "Sydney",
+          "airport_code": "SYD",
+          "distance_km": 16900,
+          "distance_miles": 10510,
+          "estimated_travel_time_hours": 21.0,
+          "co2_kg": 1800,
+          "estimated_price_gbp": 2704.0
+        },
+        {
+          "office_name": "Wroclaw",
+          "airport_code": "WRO",
+          "distance_km": 1160,
+          "distance_miles": 721,
+          "estimated_travel_time_hours": 2.5,
+          "co2_kg": 60,
+          "estimated_price_gbp": 185.6
+        },
+        {
+          "office_name": "Budapest",
+          "airport_code": "BUD",
+          "distance_km": 1450,
+          "distance_miles": 902,
+          "estimated_travel_time_hours": 2.5,
+          "co2_kg": 65,
+          "estimated_price_gbp": 232.0
+        }
+      ]
+    },
+    {
+      "office_name": "Paris",
+      "airport_code": "CDG",
+      "coordinates": {
+        "latitude": 49.0097,
+        "longitude": 2.5479
+      },
+      "distances_to_other_offices": [
+        {
+          "office_name": "New York",
+          "airport_code": "JFK",
+          "distance_km": 5837,
+          "distance_miles": 3628,
+          "estimated_travel_time_hours": 7.5,
+          "co2_kg": 520,
+          "estimated_price_gbp": 933.92
+        },
+        {
+          "office_name": "London",
+          "airport_code": "LHR",
+          "distance_km": 344,
+          "distance_miles": 214,
+          "estimated_travel_time_hours": 1.0,
+          "co2_kg": 30,
+          "estimated_price_gbp": 55.04
+        },
+        {
+          "office_name": "Mumbai",
+          "airport_code": "BOM",
+          "distance_km": 7200,
+          "distance_miles": 4474,
+          "estimated_travel_time_hours": 9.5,
+          "co2_kg": 800,
+          "estimated_price_gbp": 1152.0
+        },
+        {
+          "office_name": "Dubai",
+          "airport_code": "DXB",
+          "distance_km": 5500,
+          "distance_miles": 3420,
+          "estimated_travel_time_hours": 7.0,
+          "co2_kg": 600,
+          "estimated_price_gbp": 880.0
+        },
+        {
+          "office_name": "Singapore",
+          "airport_code": "SIN",
+          "distance_km": 10840,
+          "distance_miles": 6736,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1734.4
+        },
+        {
+          "office_name": "Hong Kong",
+          "airport_code": "HKG",
+          "distance_km": 9600,
+          "distance_miles": 5965,
+          "estimated_travel_time_hours": 11.5,
+          "co2_kg": 1100,
+          "estimated_price_gbp": 1536.0
+        },
+        {
+          "office_name": "Shanghai",
+          "airport_code": "PVG",
+          "distance_km": 9200,
+          "distance_miles": 5720,
+          "estimated_travel_time_hours": 11.0,
+          "co2_kg": 1050,
+          "estimated_price_gbp": 1472.0
+        },
+        {
+          "office_name": "Zurich",
+          "airport_code": "ZRH",
+          "distance_km": 890,
+          "distance_miles": 553,
+          "estimated_travel_time_hours": 2.0,
+          "co2_kg": 50,
+          "estimated_price_gbp": 142.4
+        },
+        {
+          "office_name": "Geneva",
+          "airport_code": "GVA",
+          "distance_km": 830,
+          "distance_miles": 516,
+          "estimated_travel_time_hours": 1.5,
+          "co2_kg": 50,
+          "estimated_price_gbp": 132.8
+        },
+        {
+          "office_name": "Aarhus",
+          "airport_code": "AAR",
+          "distance_km": 900,
+          "distance_miles": 560,
+          "estimated_travel_time_hours": 2.0,
+          "co2_kg": 55,
+          "estimated_price_gbp": 144.0
+        },
+        {
+          "office_name": "Sydney",
+          "airport_code": "SYD",
+          "distance_km": 16900,
+          "distance_miles": 10510,
+          "estimated_travel_time_hours": 21.0,
+          "co2_kg": 1800,
+          "estimated_price_gbp": 2704.0
+        },
+        {
+          "office_name": "Wroclaw",
+          "airport_code": "WRO",
+          "distance_km": 1160,
+          "distance_miles": 721,
+          "estimated_travel_time_hours": 2.5,
+          "co2_kg": 60,
+          "estimated_price_gbp": 185.6
+        },
+        {
+          "office_name": "Budapest",
+          "airport_code": "BUD",
+          "distance_km": 1450,
+          "distance_miles": 902,
+          "estimated_travel_time_hours": 2.5,
+          "co2_kg": 65,
+          "estimated_price_gbp": 232.0
+        }
+      ]
+    },
+    {
+      "office_name": "Hong Kong",
+      "airport_code": "HKG",
+      "coordinates": {
+        "latitude": 22.308,
+        "longitude": 113.9185
+      },
+      "distances_to_other_offices": [
+        {
+          "office_name": "New York",
+          "airport_code": "JFK",
+          "distance_km": 12950,
+          "distance_miles": 8045,
+          "estimated_travel_time_hours": 16.0,
+          "co2_kg": 1400,
+          "estimated_price_gbp": 2072.0
+        },
+        {
+          "office_name": "London",
+          "airport_code": "LHR",
+          "distance_km": 9600,
+          "distance_miles": 5965,
+          "estimated_travel_time_hours": 11.5,
+          "co2_kg": 1100,
+          "estimated_price_gbp": 1536.0
+        },
+        {
+          "office_name": "Paris",
+          "airport_code": "CDG",
+          "distance_km": 9600,
+          "distance_miles": 5965,
+          "estimated_travel_time_hours": 11.5,
+          "co2_kg": 1100,
+          "estimated_price_gbp": 1536.0
+        },
+        {
+          "office_name": "Mumbai",
+          "airport_code": "BOM",
+          "distance_km": 3800,
+          "distance_miles": 2361,
+          "estimated_travel_time_hours": 5.0,
+          "co2_kg": 450,
+          "estimated_price_gbp": 608.0
+        },
+        {
+          "office_name": "Dubai",
+          "airport_code": "DXB",
+          "distance_km": 6000,
+          "distance_miles": 3728,
+          "estimated_travel_time_hours": 8.0,
+          "co2_kg": 700,
+          "estimated_price_gbp": 960.0
+        },
+        {
+          "office_name": "Singapore",
+          "airport_code": "SIN",
+          "distance_km": 2600,
+          "distance_miles": 1616,
+          "estimated_travel_time_hours": 4.0,
+          "co2_kg": 300,
+          "estimated_price_gbp": 416.0
+        },
+        {
+          "office_name": "Shanghai",
+          "airport_code": "PVG",
+          "distance_km": 1000,
+          "distance_miles": 621,
+          "estimated_travel_time_hours": 2.0,
+          "co2_kg": 50,
+          "estimated_price_gbp": 160.0
+        },
+        {
+          "office_name": "Zurich",
+          "airport_code": "ZRH",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Geneva",
+          "airport_code": "GVA",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Aarhus",
+          "airport_code": "AAR",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Sydney",
+          "airport_code": "SYD",
+          "distance_km": 7800,
+          "distance_miles": 4855,
+          "estimated_travel_time_hours": 10.0,
+          "co2_kg": 900,
+          "estimated_price_gbp": 1248.0
+        },
+        {
+          "office_name": "Wroclaw",
+          "airport_code": "WRO",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Budapest",
+          "airport_code": "BUD",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        }
+      ]
+    },
+    {
+      "office_name": "Singapore",
+      "airport_code": "SIN",
+      "coordinates": {
+        "latitude": 1.3644,
+        "longitude": 103.9915
+      },
+      "distances_to_other_offices": [
+        {
+          "office_name": "New York",
+          "airport_code": "JFK",
+          "distance_km": 15300,
+          "distance_miles": 9500,
+          "estimated_travel_time_hours": 18.0,
+          "co2_kg": 1600,
+          "estimated_price_gbp": 2448.0
+        },
+        {
+          "office_name": "London",
+          "airport_code": "LHR",
+          "distance_km": 10840,
+          "distance_miles": 6736,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1734.4
+        },
+        {
+          "office_name": "Paris",
+          "airport_code": "CDG",
+          "distance_km": 10840,
+          "distance_miles": 6736,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1734.4
+        },
+        {
+          "office_name": "Mumbai",
+          "airport_code": "BOM",
+          "distance_km": 2600,
+          "distance_miles": 1616,
+          "estimated_travel_time_hours": 4.0,
+          "co2_kg": 300,
+          "estimated_price_gbp": 416.0
+        },
+        {
+          "office_name": "Dubai",
+          "airport_code": "DXB",
+          "distance_km": 6000,
+          "distance_miles": 3728,
+          "estimated_travel_time_hours": 8.0,
+          "co2_kg": 700,
+          "estimated_price_gbp": 960.0
+        },
+        {
+          "office_name": "Hong Kong",
+          "airport_code": "HKG",
+          "distance_km": 2600,
+          "distance_miles": 1616,
+          "estimated_travel_time_hours": 4.0,
+          "co2_kg": 300,
+          "estimated_price_gbp": 416.0
+        },
+        {
+          "office_name": "Shanghai",
+          "airport_code": "PVG",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Zurich",
+          "airport_code": "ZRH",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Geneva",
+          "airport_code": "GVA",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Aarhus",
+          "airport_code": "AAR",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Sydney",
+          "airport_code": "SYD",
+          "distance_km": 7800,
+          "distance_miles": 4855,
+          "estimated_travel_time_hours": 10.0,
+          "co2_kg": 900,
+          "estimated_price_gbp": 1248.0
+        },
+        {
+          "office_name": "Wroclaw",
+          "airport_code": "WRO",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Budapest",
+          "airport_code": "BUD",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        }
+      ]
+    },
+    {
+      "office_name": "Mumbai",
+      "airport_code": "BOM",
+      "coordinates": {
+        "latitude": 19.0896,
+        "longitude": 72.8656
+      },
+      "distances_to_other_offices": [
+        {
+          "office_name": "New York",
+          "airport_code": "JFK",
+          "distance_km": 11730,
+          "distance_miles": 7289,
+          "estimated_travel_time_hours": 15.5,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1876.8
+        },
+        {
+          "office_name": "London",
+          "airport_code": "LHR",
+          "distance_km": 7200,
+          "distance_miles": 4474,
+          "estimated_travel_time_hours": 9.5,
+          "co2_kg": 800,
+          "estimated_price_gbp": 1152.0
+        },
+        {
+          "office_name": "Paris",
+          "airport_code": "CDG",
+          "distance_km": 7200,
+          "distance_miles": 4474,
+          "estimated_travel_time_hours": 9.5,
+          "co2_kg": 800,
+          "estimated_price_gbp": 1152.0
+        },
+        {
+          "office_name": "Dubai",
+          "airport_code": "DXB",
+          "distance_km": 3800,
+          "distance_miles": 2361,
+          "estimated_travel_time_hours": 5.0,
+          "co2_kg": 450,
+          "estimated_price_gbp": 608.0
+        },
+        {
+          "office_name": "Singapore",
+          "airport_code": "SIN",
+          "distance_km": 2600,
+          "distance_miles": 1616,
+          "estimated_travel_time_hours": 4.0,
+          "co2_kg": 300,
+          "estimated_price_gbp": 416.0
+        },
+        {
+          "office_name": "Hong Kong",
+          "airport_code": "HKG",
+          "distance_km": 3800,
+          "distance_miles": 2361,
+          "estimated_travel_time_hours": 5.0,
+          "co2_kg": 450,
+          "estimated_price_gbp": 608.0
+        },
+        {
+          "office_name": "Shanghai",
+          "airport_code": "PVG",
+          "distance_km": 1000,
+          "distance_miles": 621,
+          "estimated_travel_time_hours": 2.0,
+          "co2_kg": 50,
+          "estimated_price_gbp": 160.0
+        },
+        {
+          "office_name": "Zurich",
+          "airport_code": "ZRH",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Geneva",
+          "airport_code": "GVA",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Aarhus",
+          "airport_code": "AAR",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Sydney",
+          "airport_code": "SYD",
+          "distance_km": 7800,
+          "distance_miles": 4855,
+          "estimated_travel_time_hours": 10.0,
+          "co2_kg": 900,
+          "estimated_price_gbp": 1248.0
+        },
+        {
+          "office_name": "Wroclaw",
+          "airport_code": "WRO",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Budapest",
+          "airport_code": "BUD",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        }
+      ]
+    },
+    {
+      "office_name": "Dubai",
+      "airport_code": "DXB",
+      "coordinates": {
+        "latitude": 25.2532,
+        "longitude": 55.3657
+      },
+      "distances_to_other_offices": [
+        {
+          "office_name": "New York",
+          "airport_code": "JFK",
+          "distance_km": 11000,
+          "distance_miles": 6840,
+          "estimated_travel_time_hours": 14.0,
+          "co2_kg": 1100,
+          "estimated_price_gbp": 1760.0
+        },
+        {
+          "office_name": "London",
+          "airport_code": "LHR",
+          "distance_km": 5500,
+          "distance_miles": 3420,
+          "estimated_travel_time_hours": 7.0,
+          "co2_kg": 600,
+          "estimated_price_gbp": 880.0
+        },
+        {
+          "office_name": "Paris",
+          "airport_code": "CDG",
+          "distance_km": 5500,
+          "distance_miles": 3420,
+          "estimated_travel_time_hours": 7.0,
+          "co2_kg": 600,
+          "estimated_price_gbp": 880.0
+        },
+        {
+          "office_name": "Mumbai",
+          "airport_code": "BOM",
+          "distance_km": 3800,
+          "distance_miles": 2361,
+          "estimated_travel_time_hours": 5.0,
+          "co2_kg": 450,
+          "estimated_price_gbp": 608.0
+        },
+        {
+          "office_name": "Singapore",
+          "airport_code": "SIN",
+          "distance_km": 6000,
+          "distance_miles": 3728,
+          "estimated_travel_time_hours": 8.0,
+          "co2_kg": 700,
+          "estimated_price_gbp": 960.0
+        },
+        {
+          "office_name": "Hong Kong",
+          "airport_code": "HKG",
+          "distance_km": 6000,
+          "distance_miles": 3728,
+          "estimated_travel_time_hours": 8.0,
+          "co2_kg": 700,
+          "estimated_price_gbp": 960.0
+        },
+        {
+          "office_name": "Shanghai",
+          "airport_code": "PVG",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Zurich",
+          "airport_code": "ZRH",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Geneva",
+          "airport_code": "GVA",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Aarhus",
+          "airport_code": "AAR",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Sydney",
+          "airport_code": "SYD",
+          "distance_km": 7800,
+          "distance_miles": 4855,
+          "estimated_travel_time_hours": 10.0,
+          "co2_kg": 900,
+          "estimated_price_gbp": 1248.0
+        },
+        {
+          "office_name": "Wroclaw",
+          "airport_code": "WRO",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Budapest",
+          "airport_code": "BUD",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        }
+      ]
+    },
+    {
+      "office_name": "Shanghai",
+      "airport_code": "PVG",
+      "coordinates": {
+        "latitude": 31.1443,
+        "longitude": 121.8083
+      },
+      "distances_to_other_offices": [
+        {
+          "office_name": "New York",
+          "airport_code": "JFK",
+          "distance_km": 11700,
+          "distance_miles": 7270,
+          "estimated_travel_time_hours": 15.5,
+          "co2_kg": 1300,
+          "estimated_price_gbp": 1872.0
+        },
+        {
+          "office_name": "London",
+          "airport_code": "LHR",
+          "distance_km": 9200,
+          "distance_miles": 5720,
+          "estimated_travel_time_hours": 11.0,
+          "co2_kg": 1050,
+          "estimated_price_gbp": 1472.0
+        },
+        {
+          "office_name": "Paris",
+          "airport_code": "CDG",
+          "distance_km": 9200,
+          "distance_miles": 5720,
+          "estimated_travel_time_hours": 11.0,
+          "co2_kg": 1050,
+          "estimated_price_gbp": 1472.0
+        },
+        {
+          "office_name": "Mumbai",
+          "airport_code": "BOM",
+          "distance_km": 1000,
+          "distance_miles": 621,
+          "estimated_travel_time_hours": 2.0,
+          "co2_kg": 50,
+          "estimated_price_gbp": 160.0
+        },
+        {
+          "office_name": "Dubai",
+          "airport_code": "DXB",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Singapore",
+          "airport_code": "SIN",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Hong Kong",
+          "airport_code": "HKG",
+          "distance_km": 1000,
+          "distance_miles": 621,
+          "estimated_travel_time_hours": 2.0,
+          "co2_kg": 50,
+          "estimated_price_gbp": 160.0
+        },
+        {
+          "office_name": "Zurich",
+          "airport_code": "ZRH",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Geneva",
+          "airport_code": "GVA",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Aarhus",
+          "airport_code": "AAR",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Sydney",
+          "airport_code": "SYD",
+          "distance_km": 7800,
+          "distance_miles": 4855,
+          "estimated_travel_time_hours": 10.0,
+          "co2_kg": 900,
+          "estimated_price_gbp": 1248.0
+        },
+        {
+          "office_name": "Wroclaw",
+          "airport_code": "WRO",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Budapest",
+          "airport_code": "BUD",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        }
+      ]
+    },
+    {
+      "office_name": "Zurich",
+      "airport_code": "ZRH",
+      "coordinates": {
+        "latitude": 47.4582,
+        "longitude": 8.5555
+      },
+      "distances_to_other_offices": [
+        {
+          "office_name": "New York",
+          "airport_code": "JFK",
+          "distance_km": 6370,
+          "distance_miles": 3959,
+          "estimated_travel_time_hours": 8.0,
+          "co2_kg": 540,
+          "estimated_price_gbp": 1019.2
+        },
+        {
+          "office_name": "London",
+          "airport_code": "LHR",
+          "distance_km": 890,
+          "distance_miles": 553,
+          "estimated_travel_time_hours": 2.0,
+          "co2_kg": 50,
+          "estimated_price_gbp": 142.4
+        },
+        {
+          "office_name": "Paris",
+          "airport_code": "CDG",
+          "distance_km": 890,
+          "distance_miles": 553,
+          "estimated_travel_time_hours": 2.0,
+          "co2_kg": 50,
+          "estimated_price_gbp": 142.4
+        },
+        {
+          "office_name": "Mumbai",
+          "airport_code": "BOM",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Dubai",
+          "airport_code": "DXB",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Singapore",
+          "airport_code": "SIN",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Hong Kong",
+          "airport_code": "HKG",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Shanghai",
+          "airport_code": "PVG",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Geneva",
+          "airport_code": "GVA",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Aarhus",
+          "airport_code": "AAR",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Sydney",
+          "airport_code": "SYD",
+          "distance_km": 7800,
+          "distance_miles": 4855,
+          "estimated_travel_time_hours": 10.0,
+          "co2_kg": 900,
+          "estimated_price_gbp": 1248.0
+        },
+        {
+          "office_name": "Wroclaw",
+          "airport_code": "WRO",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Budapest",
+          "airport_code": "BUD",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        }
+      ]
+    },
+    {
+      "office_name": "Geneva",
+      "airport_code": "GVA",
+      "coordinates": {
+        "latitude": 46.2381,
+        "longitude": 6.1089
+      },
+      "distances_to_other_offices": [
+        {
+          "office_name": "New York",
+          "airport_code": "JFK",
+          "distance_km": 6290,
+          "distance_miles": 3907,
+          "estimated_travel_time_hours": 8.0,
+          "co2_kg": 530,
+          "estimated_price_gbp": 1006.4
+        },
+        {
+          "office_name": "London",
+          "airport_code": "LHR",
+          "distance_km": 830,
+          "distance_miles": 516,
+          "estimated_travel_time_hours": 1.5,
+          "co2_kg": 50,
+          "estimated_price_gbp": 132.8
+        },
+        {
+          "office_name": "Paris",
+          "airport_code": "CDG",
+          "distance_km": 830,
+          "distance_miles": 516,
+          "estimated_travel_time_hours": 1.5,
+          "co2_kg": 50,
+          "estimated_price_gbp": 132.8
+        },
+        {
+          "office_name": "Mumbai",
+          "airport_code": "BOM",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Dubai",
+          "airport_code": "DXB",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Singapore",
+          "airport_code": "SIN",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Hong Kong",
+          "airport_code": "HKG",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Shanghai",
+          "airport_code": "PVG",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Zurich",
+          "airport_code": "ZRH",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Aarhus",
+          "airport_code": "AAR",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Sydney",
+          "airport_code": "SYD",
+          "distance_km": 7800,
+          "distance_miles": 4855,
+          "estimated_travel_time_hours": 10.0,
+          "co2_kg": 900,
+          "estimated_price_gbp": 1248.0
+        },
+        {
+          "office_name": "Wroclaw",
+          "airport_code": "WRO",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Budapest",
+          "airport_code": "BUD",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        }
+      ]
+    },
+    {
+      "office_name": "Aarhus",
+      "airport_code": "AAR",
+      "coordinates": {
+        "latitude": 56.3,
+        "longitude": 10.619
+      },
+      "distances_to_other_offices": [
+        {
+          "office_name": "New York",
+          "airport_code": "JFK",
+          "distance_km": 6230,
+          "distance_miles": 3872,
+          "estimated_travel_time_hours": 8.0,
+          "co2_kg": 520,
+          "estimated_price_gbp": 996.8
+        },
+        {
+          "office_name": "London",
+          "airport_code": "LHR",
+          "distance_km": 900,
+          "distance_miles": 560,
+          "estimated_travel_time_hours": 2.0,
+          "co2_kg": 55,
+          "estimated_price_gbp": 144.0
+        },
+        {
+          "office_name": "Paris",
+          "airport_code": "CDG",
+          "distance_km": 900,
+          "distance_miles": 560,
+          "estimated_travel_time_hours": 2.0,
+          "co2_kg": 55,
+          "estimated_price_gbp": 144.0
+        },
+        {
+          "office_name": "Mumbai",
+          "airport_code": "BOM",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Dubai",
+          "airport_code": "DXB",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Singapore",
+          "airport_code": "SIN",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Hong Kong",
+          "airport_code": "HKG",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Shanghai",
+          "airport_code": "PVG",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Zurich",
+          "airport_code": "ZRH",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Geneva",
+          "airport_code": "GVA",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Aarhus",
+          "airport_code": "AAR",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Sydney",
+          "airport_code": "SYD",
+          "distance_km": 7800,
+          "distance_miles": 4855,
+          "estimated_travel_time_hours": 10.0,
+          "co2_kg": 900,
+          "estimated_price_gbp": 1248.0
+        },
+        {
+          "office_name": "Wroclaw",
+          "airport_code": "WRO",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Budapest",
+          "airport_code": "BUD",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        }
+      ]
+    },
+    {
+      "office_name": "Sydney",
+      "airport_code": "SYD",
+      "coordinates": {
+        "latitude": -33.9399,
+        "longitude": 151.1753
+      },
+      "distances_to_other_offices": [
+        {
+          "office_name": "New York",
+          "airport_code": "JFK",
+          "distance_km": 15980,
+          "distance_miles": 9930,
+          "estimated_travel_time_hours": 20.0,
+          "co2_kg": 1700,
+          "estimated_price_gbp": 2556.8
+        },
+        {
+          "office_name": "London",
+          "airport_code": "LHR",
+          "distance_km": 16900,
+          "distance_miles": 10510,
+          "estimated_travel_time_hours": 21.0,
+          "co2_kg": 1800,
+          "estimated_price_gbp": 2704.0
+        },
+        {
+          "office_name": "Paris",
+          "airport_code": "CDG",
+          "distance_km": 16900,
+          "distance_miles": 10510,
+          "estimated_travel_time_hours": 21.0,
+          "co2_kg": 1800,
+          "estimated_price_gbp": 2704.0
+        },
+        {
+          "office_name": "Mumbai",
+          "airport_code": "BOM",
+          "distance_km": 7800,
+          "distance_miles": 4855,
+          "estimated_travel_time_hours": 10.0,
+          "co2_kg": 900,
+          "estimated_price_gbp": 1248.0
+        },
+        {
+          "office_name": "Dubai",
+          "airport_code": "DXB",
+          "distance_km": 7800,
+          "distance_miles": 4855,
+          "estimated_travel_time_hours": 10.0,
+          "co2_kg": 900,
+          "estimated_price_gbp": 1248.0
+        },
+        {
+          "office_name": "Singapore",
+          "airport_code": "SIN",
+          "distance_km": 7800,
+          "distance_miles": 4855,
+          "estimated_travel_time_hours": 10.0,
+          "co2_kg": 900,
+          "estimated_price_gbp": 1248.0
+        },
+        {
+          "office_name": "Hong Kong",
+          "airport_code": "HKG",
+          "distance_km": 7800,
+          "distance_miles": 4855,
+          "estimated_travel_time_hours": 10.0,
+          "co2_kg": 900,
+          "estimated_price_gbp": 1248.0
+        },
+        {
+          "office_name": "Shanghai",
+          "airport_code": "PVG",
+          "distance_km": 7800,
+          "distance_miles": 4855,
+          "estimated_travel_time_hours": 10.0,
+          "co2_kg": 900,
+          "estimated_price_gbp": 1248.0
+        },
+        {
+          "office_name": "Zurich",
+          "airport_code": "ZRH",
+          "distance_km": 7800,
+          "distance_miles": 4855,
+          "estimated_travel_time_hours": 10.0,
+          "co2_kg": 900,
+          "estimated_price_gbp": 1248.0
+        },
+        {
+          "office_name": "Geneva",
+          "airport_code": "GVA",
+          "distance_km": 7800,
+          "distance_miles": 4855,
+          "estimated_travel_time_hours": 10.0,
+          "co2_kg": 900,
+          "estimated_price_gbp": 1248.0
+        },
+        {
+          "office_name": "Aarhus",
+          "airport_code": "AAR",
+          "distance_km": 7800,
+          "distance_miles": 4855,
+          "estimated_travel_time_hours": 10.0,
+          "co2_kg": 900,
+          "estimated_price_gbp": 1248.0
+        },
+        {
+          "office_name": "Wroclaw",
+          "airport_code": "WRO",
+          "distance_km": 7800,
+          "distance_miles": 4855,
+          "estimated_travel_time_hours": 10.0,
+          "co2_kg": 900,
+          "estimated_price_gbp": 1248.0
+        },
+        {
+          "office_name": "Budapest",
+          "airport_code": "BUD",
+          "distance_km": 7800,
+          "distance_miles": 4855,
+          "estimated_travel_time_hours": 10.0,
+          "co2_kg": 900,
+          "estimated_price_gbp": 1248.0
+        }
+      ]
+    },
+    {
+      "office_name": "Wroclaw",
+      "airport_code": "WRO",
+      "coordinates": {
+        "latitude": 51.1027,
+        "longitude": 16.8859
+      },
+      "distances_to_other_offices": [
+        {
+          "office_name": "New York",
+          "airport_code": "JFK",
+          "distance_km": 6370,
+          "distance_miles": 3959,
+          "estimated_travel_time_hours": 8.5,
+          "co2_kg": 540,
+          "estimated_price_gbp": 1019.2
+        },
+        {
+          "office_name": "London",
+          "airport_code": "LHR",
+          "distance_km": 1160,
+          "distance_miles": 721,
+          "estimated_travel_time_hours": 2.5,
+          "co2_kg": 60,
+          "estimated_price_gbp": 185.6
+        },
+        {
+          "office_name": "Paris",
+          "airport_code": "CDG",
+          "distance_km": 1160,
+          "distance_miles": 721,
+          "estimated_travel_time_hours": 2.5,
+          "co2_kg": 60,
+          "estimated_price_gbp": 185.6
+        },
+        {
+          "office_name": "Mumbai",
+          "airport_code": "BOM",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Dubai",
+          "airport_code": "DXB",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Singapore",
+          "airport_code": "SIN",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Hong Kong",
+          "airport_code": "HKG",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Shanghai",
+          "airport_code": "PVG",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Zurich",
+          "airport_code": "ZRH",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Geneva",
+          "airport_code": "GVA",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Aarhus",
+          "airport_code": "AAR",
+          "distance_km": 10500,
+          "distance_miles": 6529,
+          "estimated_travel_time_hours": 13.0,
+          "co2_kg": 1200,
+          "estimated_price_gbp": 1680.0
+        },
+        {
+          "office_name": "Sydney",
+          "airport_code": "SYD",
+          "distance_km": 7800,
+          "distance_miles": 4855,
+          "estimated_travel_time_hours": 10.0,
+          "co2_kg": 900,
+          "estimated_price_gbp": 1248.0
+        },
+        {
+          "office_name": "Budapest",
+          "airport_code": "BUD",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        }
+      ]
+    },
+    {
+      "office_name": "Budapest",
+      "airport_code": "BUD",
+      "coordinates": {
+        "latitude": 47.4397,
+        "longitude": 19.2617
+      },
+      "distances_to_other_offices": [
+        {
+          "office_name": "New York",
+          "airport_code": "JFK",
+          "distance_km": 6470,
+          "distance_miles": 4020,
+          "estimated_travel_time_hours": 8.5,
+          "co2_kg": 550,
+          "estimated_price_gbp": 1035.2
+        },
+        {
+          "office_name": "London",
+          "airport_code": "LHR",
+          "distance_km": 1450,
+          "distance_miles": 902,
+          "estimated_travel_time_hours": 2.5,
+          "co2_kg": 65,
+          "estimated_price_gbp": 232.0
+        },
+        {
+          "office_name": "Paris",
+          "airport_code": "CDG",
+          "distance_km": 1450,
+          "distance_miles": 902,
+          "estimated_travel_time_hours": 2.5,
+          "co2_kg": 65,
+          "estimated_price_gbp": 232.0
+        },
+        {
+          "office_name": "Mumbai",
+          "airport_code": "BOM",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Dubai",
+          "airport_code": "DXB",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Singapore",
+          "airport_code": "SIN",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Hong Kong",
+          "airport_code": "HKG",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Shanghai",
+          "airport_code": "PVG",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Zurich",
+          "airport_code": "ZRH",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Geneva",
+          "airport_code": "GVA",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Aarhus",
+          "airport_code": "AAR",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        },
+        {
+          "office_name": "Sydney",
+          "airport_code": "SYD",
+          "distance_km": 7800,
+          "distance_miles": 4855,
+          "estimated_travel_time_hours": 10.0,
+          "co2_kg": 900,
+          "estimated_price_gbp": 1248.0
+        },
+        {
+          "office_name": "Wroclaw",
+          "airport_code": "WRO",
+          "distance_km": 10600,
+          "distance_miles": 6585,
+          "estimated_travel_time_hours": 13.5,
+          "co2_kg": 1250,
+          "estimated_price_gbp": 1696.0
+        }
+      ]
+    }
+  ]
+}
