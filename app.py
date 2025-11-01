@@ -9,73 +9,62 @@ st.set_page_config(
 # ---------- CUSTOM STYLE ----------
 st.markdown("""
     <style>
-        /* Import clean, geometric font */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-        html, body, [class*="css"] {
-            font-family: 'Poppins', sans-serif;
+        /* Overall page background */
+        .stApp {
             background-color: #0d072c !important;
-            color: white;
+            color: white !important;
+            font-family: "Source Sans Pro", sans-serif !important;
         }
 
+        /* Main container */
         .block-container {
-            padding-top: 2rem;
-            padding-bottom: 2rem;
+            padding-top: 3rem !important;
+            padding-bottom: 1rem !important;
+            max-width: 1200px;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        /* Headings */
+        h1, h2, h3 {
+            color: #ffffff !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.3px;
         }
 
-        /* Sidebar background */
-        section[data-testid="stSidebar"] {
-            background-color: #12133f !important;
-        }
-
-        /* Buttons */
-        .stButton>button {
-            background-color: #ffffff;
-            color: #0d072c;
-            border: none;
-            border-radius: 8px;
-            padding: 0.5rem 1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .stButton>button:hover {
-            background-color: #00aaff;
-            color: white;
-            transform: scale(1.03);
-        }
-
-        /* Metrics */
-        div[data-testid="stMetricValue"], div[data-testid="stMetricLabel"] {
+        /* Sidebar */
+        [data-testid="stSidebar"] {
+            background-color: #121639 !important;
             color: white !important;
         }
 
-        /* Divider lines */
-        hr {
-            border-color: rgba(255,255,255,0.2);
+        /* Slider accent */
+        .stSlider > div > div > div {
+            background: linear-gradient(90deg, #4b5fff, #00c6ff);
         }
 
-        /* Dataframe styling */
-        .stDataFrame {
-            background-color: white !important;
-            color: #0d072c !important;
+        /* Divider colour */
+        hr {
+            border-color: #3a3f73 !important;
+        }
+
+        /* Dataframes */
+        .dataframe {
+            color: #ffffff !important;
+        }
+
+        /* Metrics section (col2) text alignment fix */
+        [data-testid="stMetricValue"] {
+            color: #ffffff !important;
         }
     </style>
 """, unsafe_allow_html=True)
 
 # ---------- HEADER ----------
-st.markdown("""
-    <div style='background-color:#0d072c; padding:1.5rem; border-radius:10px; text-align:center;'>
-        <h1 style='color:#ffffff; font-weight:600; margin-bottom:0;'>QRT Meeting Optimizer</h1>
-        <p style='color:#b0b0b0; font-size:1.1rem;'>Let's find your next meetup location...</p>
-    </div>
-""", unsafe_allow_html=True)
+col_logo, col_title = st.columns([0.15, 0.85])
+with col_logo:
+    st.image("qrt-logo.svg", width=100)
+with col_title:
+    st.title("Meeting in the middle.")
+    st.subheader("Find the most sustainable and fair event location.")
 
 st.divider()
 
@@ -88,7 +77,7 @@ uploaded_file = st.sidebar.file_uploader("Upload attendee data (JSON)", type=["j
 run_button = st.sidebar.button("Run Optimization")
 
 st.sidebar.divider()
-st.sidebar.caption("Created at DurHack — Team BridgeBuilders")
+st.sidebar.caption("Created at DurHackX — Team 3319")
 
 # ---------- MAIN LAYOUT ----------
 col1, col2 = st.columns([3, 1])
@@ -114,5 +103,4 @@ with col2:
     st.write("Once results are ready, an explanation of the chosen city will appear here.")
 
 st.divider()
-st.caption("© 2025 Qube Research & Technologies — Meeting in the Middle.")
-
+st.caption("QRT — Meeting in the middle.")
