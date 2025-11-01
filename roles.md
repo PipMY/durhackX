@@ -9,9 +9,8 @@
 | Role | Name | Focus |
 |------|------|--------|
 | 👩‍💻 **Data Wrangler & Parser** | *Person 1* | Clean, load, and prepare the travel data for analysis |
-| 🧠 **Optimisation & Scoring Lead** | *Person 2* | Develop algorithm to choose the fairest and most sustainable meeting point |
-| 🌍 **Visualisation & Frontend Engineer** | *Person 3* | Create an interactive dashboard to explore and visualise results |
-| 📊 **Integration, Insights & Presentation Lead** | *Person 4* | Integrate modules, craft the story, and prepare final deliverables |
+| 🧠 **Optimisation Engineers** | *Person 2 + 3* | Develop algorithm to choose the fairest and most sustainable meeting point |
+| 🌍 **Visualisation & Frontend Engineer** | *Person 4* | Create an interactive dashboard to explore and visualise results |
 
 ---
 
