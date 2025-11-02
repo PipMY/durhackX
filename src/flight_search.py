@@ -1,6 +1,26 @@
 import csv
 import os
 from datetime import datetime, timedelta
+from functools import lru_cache
+
+@lru_cache(maxsize=32)
+def _read_flight_data_from_file(year, month, day):
+    """Reads all flight data from a single day's CSV file."""
+    file_name = f"{day:02d}.csv"
+    file_path = os.path.join('data', str(year), f"{month:02d}", file_name)
+
+    if not os.path.exists(file_path):
+        return []
+
+    flights = []
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                flights.append(row)
+    except Exception:
+        pass # Ignore file read errors
+    return flights
 
 def find_best_flight(departure_airport, arrival_airport, arrival_datetime_str, leeway_hours=0):
     """
@@ -53,37 +73,27 @@ def find_best_flight(departure_airport, arrival_airport, arrival_datetime_str, l
     return None
 
 def _search_file(departure_airport, arrival_airport, year, month, day, max_arrival_datetime=None):
-    """Helper function to search a single day's flight data in data/2024/{month}/{day}.csv."""
-    flights = []
-    file_name = f"{day:02d}.csv"
-    file_path = os.path.join('data', str(year), f"{month:02d}", file_name)
-
-    if not os.path.exists(file_path):
+    """Helper function to search a single day's flight data."""
+    all_flights_for_day = _read_flight_data_from_file(year, month, day)
+    if not all_flights_for_day:
         return []
 
-    try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                if row.get('DEPAPT') == departure_airport and row.get('ARRAPT') == arrival_airport:
-                    if max_arrival_datetime:
-                        arrival_utc_str = row.get('SCHEDULED_ARRIVAL_DATE_TIME_UTC')
-                        if arrival_utc_str:
-                            try:
-                                # Handle potential timezone info at the end of the string
-                                if '.' in arrival_utc_str:
-                                    arrival_utc_str = arrival_utc_str.split('.')[0]
-                                arrival_dt = datetime.fromisoformat(arrival_utc_str)
-                                if arrival_dt <= max_arrival_datetime.replace(tzinfo=None):
-                                    flights.append(row)
-                            except (ValueError, TypeError):
-                                continue # Ignore rows with bad date formats
-                    else:
-                        flights.append(row)
-    except Exception:
-        # Ignoring file read errors for this broader search
-        pass
-    
+    flights = []
+    for row in all_flights_for_day:
+        if row.get('DEPAPT') == departure_airport and row.get('ARRAPT') == arrival_airport:
+            if max_arrival_datetime:
+                arrival_utc_str = row.get('SCHEDULED_ARRIVAL_DATE_TIME_UTC')
+                if arrival_utc_str:
+                    try:
+                        if '.' in arrival_utc_str:
+                            arrival_utc_str = arrival_utc_str.split('.')[0]
+                        arrival_dt = datetime.fromisoformat(arrival_utc_str)
+                        if arrival_dt <= max_arrival_datetime.replace(tzinfo=None):
+                            flights.append(row)
+                    except (ValueError, TypeError):
+                        continue
+            else:
+                flights.append(row)
     return flights
 
 def _estimate_price(duration_minutes):

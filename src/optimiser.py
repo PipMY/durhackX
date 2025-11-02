@@ -4,6 +4,10 @@ import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 from pathlib import Path
 import json
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from src.flight_search import find_best_flight
+from src.co2_calculator import calculate_co2
+from datetime import datetime
 
 # ------------------------------------------------------------------- #
 # 1. Load city → IATA mapping from airports.csv (your data/clean/airports.csv)
@@ -46,16 +50,36 @@ def city_to_iata(city_name: str) -> str:
 
 
 # ------------------------------------------------------------------- #
-# 2. Mock travel leg generator (replace with real API later)
+# 2. Travel leg generator (using flight_search)
 # ------------------------------------------------------------------- #
-def find_best_travel_leg_MOCK(origin_iata: str, dest_iata: str, traveller_info=None):
+def find_best_travel_leg(origin_iata: str, dest_iata: str, arrival_datetime: str):
+    """
+    Finds the best travel leg using the flight search module.
+    Returns a dictionary with status, travel_hours, co2, and cost.
+    """
     if origin_iata == dest_iata:
         return {"status": "success", "travel_hours": 0, "co2": 0, "cost": 0}
+
+    # Use leeway_hours=2 to allow for some flexibility in arrival time
+    flight = find_best_flight(origin_iata, dest_iata, arrival_datetime, leeway_hours=2)
+
+    if not flight:
+        # Fallback for no flights found - maybe return a high-cost dummy
+        # to penalise this option, or simply mark as failed.
+        return {"status": "failed", "travel_hours": None, "co2": None, "cost": None}
+
+    travel_minutes = flight.get("duration", 0)
+    travel_hours = travel_minutes / 60.0 if travel_minutes else 0.0
+    cost = flight.get("price", 0)
+    
+    # Use the new CO2 calculator
+    co2 = calculate_co2(travel_hours)
+
     return {
         "status": "success",
-        "travel_hours": float(np.random.uniform(5, 30)),
-        "co2": float(np.random.uniform(100, 800)),
-        "cost": float(np.random.uniform(150, 1200))
+        "travel_hours": travel_hours,
+        "co2": co2,
+        "cost": cost
     }
 
 
@@ -74,6 +98,38 @@ def normalize_weights(w):
     return {k: v/total for k, v in w.items()}
 
 
+def evaluate_candidate(dest_iata, attendees, arrival_datetime):
+    """Evaluates a single candidate city."""
+    total_co2 = total_cost = 0.0
+    travel_hours = []
+    leg_cache = {}
+
+    for person in attendees:
+        cache_key = (person["origin"], dest_iata)
+        if cache_key in leg_cache:
+            leg = leg_cache[cache_key]
+        else:
+            leg = find_best_travel_leg(person["origin"], dest_iata, arrival_datetime)
+            leg_cache[cache_key] = leg
+
+        if leg["status"] != "success":
+            continue
+        total_co2 += leg["co2"]
+        total_cost += leg["cost"]
+        travel_hours.append(leg["travel_hours"])
+
+    if not travel_hours:
+        return None
+
+    fairness = calculate_fairness(travel_hours)
+    return {
+        "candidate_city": dest_iata,
+        "total_co2": total_co2,
+        "fairness_score": fairness,
+        "total_cost": total_cost
+    }
+
+
 # ------------------------------------------------------------------- #
 # 4. MAIN OPTIMIZER – Accepts your JSON format exactly
 # ------------------------------------------------------------------- #
@@ -82,6 +138,10 @@ def run_optimization(scenario_json, weights):
     Input:
         scenario_json = {
             "attendees": {"London": 4, "Paris": 10, ...},
+            "availability_window": {
+                "start": "2025-08-04T12:30:00Z",
+                "end": "2025-08-08T12:00:00Z"
+            },
             "candidates": ["London", "Paris", ...]  # optional
         }
         weights = {"co2": 0.33, "mean_time": 0.33, "cost": 0.34}
@@ -106,43 +166,38 @@ def run_optimization(scenario_json, weights):
     if not attendees:
         raise ValueError("No valid attendees after city → IATA mapping.")
 
-    # --- 2. Parse candidates ---
+    # --- 2. Parse candidates & availability ---
     candidate_cities = scenario_json.get("candidates", list(attendees_raw.keys()))
     candidates = [city_to_iata(c) for c in candidate_cities]
     candidates = [c for c in candidates if c != "XXX"]
     if not candidates:
         raise ValueError("No valid candidate cities.")
 
+    availability = scenario_json.get("availability_window", {})
+    arrival_datetime = availability.get("start")
+    if not arrival_datetime:
+        raise ValueError("Missing 'availability_window.start' in input JSON.")
+
     # --- 3. Weights ---
     w_co2 = weights.get("co2", 0.33)
     w_fairness = weights.get("mean_time", 0.33)
     w_cost = weights.get("cost", 0.34)
 
-    # --- 4. Evaluate each candidate ---
+    # --- 4. Evaluate each candidate in parallel ---
     records = []
-    for dest_iata in candidates:
-        total_co2 = total_cost = 0.0
-        travel_hours = []
-
-        for person in attendees:
-            leg = find_best_travel_leg_MOCK(person["origin"], dest_iata)
-            if leg["status"] != "success":
-                continue
-            total_co2 += leg["co2"]
-            total_cost += leg["cost"]
-            travel_hours.append(leg["travel_hours"])
-
-        fairness = calculate_fairness(travel_hours)
-        records.append({
-            "candidate_city": dest_iata,
-            "total_co2": total_co2,
-            "fairness_score": fairness,
-            "total_cost": total_cost
-        })
+    with ThreadPoolExecutor() as executor:
+        future_to_candidate = {
+            executor.submit(evaluate_candidate, dest, attendees, arrival_datetime): dest
+            for dest in candidates
+        }
+        for future in as_completed(future_to_candidate):
+            result = future.result()
+            if result:
+                records.append(result)
 
     df = pd.DataFrame(records)
     if df.empty:
-        raise ValueError("No travel data generated.")
+        raise ValueError("No travel data could be generated for any candidate city.")
 
     # --- 5. Normalize & score ---
     scaler = MinMaxScaler()
