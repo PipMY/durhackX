@@ -13,7 +13,7 @@ CO2_PER_KM_PER_PERSON = 0.1       # Default fallback (kg CO₂ / km / person)
 # -----------------------------------
 BASE_DIR = Path(__file__).resolve().parent.parent  # DURHACKX root
 OFFICE_FILE = BASE_DIR / "data" / "clean" / "office_dist.json"
-INPUT_FILE = BASE_DIR / "sample_inputs" / "input_3.json"
+INPUT_FILE = BASE_DIR / "sample_inputs" / "input_1.json"
 
 # Load office distance data
 try:
