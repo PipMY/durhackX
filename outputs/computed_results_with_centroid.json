@@ -178,6 +178,15 @@
     "centroid_info": {
         "latitude": 49.99382,
         "longitude": 1.3470199999999999,
-        "nearest_airport": null
+        "nearest_airport": {
+            "airport": {
+                "icao": "LFAB",
+                "lat": 49.961388,
+                "lon": 1.241111,
+                "name": "Dieppe",
+                "country": "FR"
+            },
+            "distance_km": 8.39
+        }
     }
 }

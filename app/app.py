@@ -157,19 +157,26 @@ if st.session_state.loading:
 st.sidebar.header("Settings")
 st.sidebar.markdown("Upload your data and adjust preferences:")
 
-# Three sliders for weighting
+import streamlit as st
+
+# Sliders (independent)
 w_co2 = st.sidebar.slider("Weight for CO₂", 0.0, 1.0, 0.33, 0.01)
-w_mean = st.sidebar.slider("Weight for Mean Travel Time", 0.0, 1.0, 0.33, 0.01)
-w_cost = st.sidebar.slider("Weight for Cost", 0.0, 1.0, 0.34, 0.01)
+w_cost = st.sidebar.slider("Weight for Cost", 0.0, 1.0, 0.33, 0.01)
+w_mean_distance = st.sidebar.slider("Weight for Mean Distance", 0.0, 1.0, 0.34, 0.01)
 
-# Normalize so total = 1
-total = w_co2 + w_mean + w_cost
-if total > 0:
-    w_co2 /= total
-    w_mean /= total
-    w_cost /= total
+# Normalization function
+def normalize_weights(*weights):
+    total = sum(weights)
+    if total == 0:
+        return [1/len(weights)] * len(weights)
+    return [w / total for w in weights]
 
-st.sidebar.caption(f"Total Weight: {w_co2 + w_mean + w_cost:.2f} (auto-normalized to 1)")
+# Apply normalization
+w_co2, w_cost, w_mean_distance = normalize_weights(w_co2, w_cost, w_mean_distance)
+
+# Display normalized weights
+st.sidebar.write(f"Normalized Weights:")
+st.sidebar.write(f"CO₂: {w_co2:.2f}, Cost: {w_cost:.2f}, Distance: {w_mean_distance:.2f}")
 
 uploaded_file = st.sidebar.file_uploader("Upload attendee data (JSON)", type=["json"], key="data_uploader")
 

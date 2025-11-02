@@ -129,7 +129,81 @@ best_office = min(results.items(), key=lambda x: compute_score(x[1]))[0]
 best_metrics = results[best_office]
 
 # -----------------------------------
-# 💾 Output results
+# 🎯 Find Weighted Centroid
+# -----------------------------------
+total_weight = 0.0
+sum_lat = sum_lon = 0.0
+
+for office in offices_data.get("offices", []):
+    name = office.get("office_name")
+    weight = attendees.get(name, 0)
+    if weight <= 0:
+        continue
+        
+    coords = office.get("coordinates", {})
+    lat = coords.get("latitude")
+    lon = coords.get("longitude")
+    if lat is None or lon is None:
+        continue
+        
+    total_weight += weight
+    sum_lat += weight * lat
+    sum_lon += weight * lon
+
+# -----------------------------------
+# 🛩️ Find Nearest Non-Office Airport
+# -----------------------------------
+centroid_airport_candidate = None
+if total_weight:
+    centroid_lat = sum_lat / total_weight
+    centroid_lon = sum_lon / total_weight
+    
+    # Load airports CSV
+    airports = []
+    try:
+        with open(AIRPORTS_CSV, newline="", encoding="utf-8") as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                icao = row.get("icao") or row.get("IATA") or row.get("iata_code")
+                lat = row.get("lat") or row.get("latitude")
+                lon = row.get("lon") or row.get("longitude")
+                if not all([icao, lat, lon]):
+                    continue
+                try:
+                    airports.append({
+                        "icao": icao.strip(),
+                        "lat": float(lat),
+                        "lon": float(lon),
+                        "name": row.get("name", ""),
+                        "country": row.get("country", "")
+                    })
+                except ValueError:
+                    continue
+    except FileNotFoundError:
+        print(f"⚠️ Warning: Could not find airports CSV at {AIRPORTS_CSV}")
+        airports = []
+
+    # Find nearest non-office airport
+    office_iatas = {o.get("airport_code") for o in offices_data.get("offices", []) if o.get("airport_code")}
+    nearest = None
+    nearest_dist = float("inf")
+    
+    for airport in airports:
+        if airport.get("icao") in office_iatas:
+            continue
+        dist = haversine(centroid_lat, centroid_lon, airport["lat"], airport["lon"])
+        if dist < nearest_dist:
+            nearest = airport
+            nearest_dist = dist
+            
+    if nearest:
+        centroid_airport_candidate = {
+            "airport": nearest,
+            "distance_km": round(nearest_dist, 2)
+        }
+
+# -----------------------------------
+# 📊 Compute Final Results
 # -----------------------------------
 output = {
     "best_office_location": best_office,
