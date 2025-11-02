@@ -1,282 +1,172 @@
-import json
-import csv
-from math import radians, sin, cos, sqrt, atan2
+# src/optimiser.py
+import numpy as np
+import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
 from pathlib import Path
-import statistics
+import json
 
-# -----------------------------------
-# 🌍 Constants & Config
-# -----------------------------------
-FLIGHT_SPEED_KMH = 800.0
-CO2_PER_KM_PER_PERSON = 0.1      # fallback kg CO2 per km per person
-PRICE_PER_KM_GBP = 0.12          # fallback price per km per person (GBP)
+# ------------------------------------------------------------------- #
+# 1. Load city → IATA mapping from airports.csv (your data/clean/airports.csv)
+# ------------------------------------------------------------------- #
+AIRPORTS_CSV = Path(__file__).parent.parent / "data" / "clean" / "airports.csv"
 
-# Files setup using pathlib
-BASE_DIR = Path(__file__).resolve().parent.parent
-OFFICE_FILE = BASE_DIR / "data" / "clean" / "office_dist.json"
-INPUT_FILE = BASE_DIR / "sample_inputs" / "input_1.json"
-AIRPORTS_CSV = BASE_DIR / "data" / "clean" / "airports.csv"
-OUTPUT_FILE = BASE_DIR / "outputs" / "computed_results_with_centroid.json"
+_city_to_iata = {}
 
-# -----------------------------------
-# 🛠️ Helper Functions
-# -----------------------------------
-def haversine(lat1, lon1, lat2, lon2):
-    """Calculate great circle distance between two lat/lon points."""
-    R = 6371.0  # Earth radius in km
-    dlat = radians(lat2 - lat1)
-    dlon = radians(lon2 - lon1)
-    a = sin(dlat/2)**2 + cos(radians(lat1)) * cos(radians(lat2)) * sin(dlon/2)**2
-    c = 2 * atan2(sqrt(a), sqrt(1 - a))
-    return R * c
-
-# -----------------------------------
-# 📂 Load Data
-# -----------------------------------
-try:
-    with open(OFFICE_FILE, "r") as f:
-        offices_data = json.load(f)
-except FileNotFoundError:
-    raise FileNotFoundError(f"❌ Could not find office distance file at {OFFICE_FILE}")
-
-try:
-    with open(INPUT_FILE, "r") as f:
-        meeting_input = json.load(f)
-except FileNotFoundError:
-    raise FileNotFoundError(f"❌ Could not find meeting input file at {INPUT_FILE}")
-
-attendees = meeting_input.get("attendees", {})
-
-# Get and normalize weights from input
-raw_weights = meeting_input.get("weights", {"co2": 0.5, "average_travel": 0.3, "fairness": 0.2})
-weights_keys = ("co2", "average_travel", "fairness")
-weights = {k: float(raw_weights.get(k, 0.0)) for k in weights_keys}
-total_w = sum(weights.values()) or 1.0
-weights = {k: weights[k] / total_w for k in weights_keys}
-
-# -----------------------------------
-# ⚙️ Compute travel & emissions metrics
-# -----------------------------------
-def compute_metrics(meeting_location):
-    """Compute CO₂ and fairness metrics for a given meeting location."""
-    attendee_travel_hours = {}
-    total_co2 = 0.0
-
-    # Find office entry for this meeting location
-    location_office = next(
-        (o for o in offices_data.get("offices", []) if o.get("office_name") == meeting_location),
-        None
-    )
-    if not location_office:
-        return None
-
-    # Loop through all attendee offices
-    for office_name, num_people in attendees.items():
-        # If this office is the meeting location, no travel required
-        if office_name == meeting_location:
-            attendee_travel_hours[office_name] = 0.0
-            continue
-
-        # Find the office in the dataset
-        office = next(
-            (o for o in offices_data.get("offices", []) if o.get("office_name") == office_name),
-            None
-        )
-        if not office:
-            continue  # Skip unknown office
-
-        # Find the distance entry from this office to the meeting location
-        distance_entry = next(
-            (d for d in office.get("distances_to_other_offices", [])
-             if d.get("office_name") == meeting_location),
-            None
-        )
-        if not distance_entry:
-            continue  # No recorded distance
-
-        # Travel time (hours)
-        distance_km = distance_entry.get("distance_km", 0)
-        flight_time_hours = distance_entry.get(
-            "estimated_travel_time_hours",
-            distance_km / FLIGHT_SPEED_KMH if distance_km else 0.0
-        )
-
-        # CO₂ emissions
-        co2_per_person = distance_entry.get(
-            "co2_kg",
-            distance_km * CO2_PER_KM_PER_PERSON if distance_km else 0.0
-        )
-
-        total_co2 += co2_per_person * num_people
-        attendee_travel_hours[office_name] = flight_time_hours
-
-    # Compute summary metrics
-    travel_times = list(attendee_travel_hours.values())
-    if not travel_times:
-        return None
-
-    metrics = {
-        "total_co2": round(total_co2, 2),
-        "average_travel_hours": round(statistics.mean(travel_times), 2),
-        "median_travel_hours": round(statistics.median(travel_times), 2),
-        "stddev_travel_hours": round(statistics.pstdev(travel_times), 2),
-        "max_travel_hours": round(max(travel_times), 2),
-        "min_travel_hours": round(min(travel_times), 2),
-        "attendee_travel_hours": {k: round(v, 2) for k, v in attendee_travel_hours.items()}
-    }
-
-    return metrics
-
-
-# -----------------------------------
-# 🧮 Evaluate all possible meeting locations
-# -----------------------------------
-meeting_locations = [
-    o.get("office_name") for o in offices_data.get("offices", []) if o.get("office_name")
-]
-
-results = {}
-for location in meeting_locations:
-    metrics = compute_metrics(location)
-    if metrics:
-        results[location] = metrics
-
-# -----------------------------------
-# 🏆 Find best office and best global location
-# -----------------------------------
-# Best = lowest total CO₂ + fairness (stddev of travel time)
-def compute_score(data):
-    return data["total_co2"] + (data["stddev_travel_hours"] * 100)
-
-best_office = min(results.items(), key=lambda x: compute_score(x[1]))[0]
-best_metrics = results[best_office]
-
-# -----------------------------------
-# 🎯 Find Weighted Centroid
-# -----------------------------------
-total_weight = 0.0
-sum_lat = sum_lon = 0.0
-
-for office in offices_data.get("offices", []):
-    name = office.get("office_name")
-    weight = attendees.get(name, 0)
-    if weight <= 0:
-        continue
-        
-    coords = office.get("coordinates", {})
-    lat = coords.get("latitude")
-    lon = coords.get("longitude")
-    if lat is None or lon is None:
-        continue
-        
-    total_weight += weight
-    sum_lat += weight * lat
-    sum_lon += weight * lon
-
-# -----------------------------------
-# 🛩️ Find Nearest Non-Office Airport
-# -----------------------------------
-centroid_airport_candidate = None
-if total_weight:
-    centroid_lat = sum_lat / total_weight
-    centroid_lon = sum_lon / total_weight
-    
-    # Load airports CSV
-    airports = []
+if AIRPORTS_CSV.exists():
     try:
-        with open(AIRPORTS_CSV, newline="", encoding="utf-8") as csvfile:
-            reader = csv.DictReader(csvfile)
-            for row in reader:
-                icao = row.get("icao") or row.get("IATA") or row.get("iata_code")
-                lat = row.get("lat") or row.get("latitude")
-                lon = row.get("lon") or row.get("longitude")
-                if not all([icao, lat, lon]):
-                    continue
-                try:
-                    airports.append({
-                        "icao": icao.strip(),
-                        "lat": float(lat),
-                        "lon": float(lon),
-                        "name": row.get("name", ""),
-                        "country": row.get("country", "")
-                    })
-                except ValueError:
-                    continue
-    except FileNotFoundError:
-        print(f"⚠️ Warning: Could not find airports CSV at {AIRPORTS_CSV}")
-        airports = []
+        df = pd.read_csv(AIRPORTS_CSV)
+        # Adjust column names if different in your CSV
+        city_col = next((c for c in df.columns if "city" in c.lower()), None)
+        iata_col = next((c for c in df.columns if "iata" in c.lower()), None)
+        if city_col and iata_col:
+            for _, row in df.iterrows():
+                city = str(row[city_col]).strip().title()
+                iata = str(row[iata_col]).strip().upper()
+                if city and iata and len(iata) == 3:
+                    _city_to_iata[city] = iata
+    except Exception as e:
+        print(f"Warning: Could not load airports.csv: {e}")
 
-    # Find nearest non-office airport
-    office_iatas = {o.get("airport_code") for o in offices_data.get("offices", []) if o.get("airport_code")}
-    nearest = None
-    nearest_dist = float("inf")
-    
-    for airport in airports:
-        if airport.get("icao") in office_iatas:
-            continue
-        dist = haversine(centroid_lat, centroid_lon, airport["lat"], airport["lon"])
-        if dist < nearest_dist:
-            nearest = airport
-            nearest_dist = dist
-            
-    if nearest:
-        centroid_airport_candidate = {
-            "airport": nearest,
-            "distance_km": round(nearest_dist, 2)
-        }
-
-# -----------------------------------
-# 📊 Compute Final Results
-# -----------------------------------
-output = {
-    "weights_used": weights,
-    "office_metrics": results,
-    "centroid_info": {
-        "latitude": centroid_lat if total_weight else None,
-        "longitude": centroid_lon if total_weight else None,
-        "nearest_airport": centroid_airport_candidate
+# Fallback map (covers your example cities)
+if not _city_to_iata:
+    _city_to_iata = {
+        "London": "LHR",
+        "Paris": "CDG",
+        "Zurich": "ZRH",
+        "Geneva": "GVA",
+        "Amsterdam": "AMS",
+        "Dubai": "DXB",
+        "New York": "JFK",
+        "Singapore": "SIN"
     }
-}
 
-# Ensure output directory exists
-OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
-
-# Save results
-with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-    json.dump(output, f, indent=4)
-
-print(json.dumps(output, indent=4))
-print(f"\n✅ Results saved to {OUTPUT_FILE}")
+def city_to_iata(city_name: str) -> str:
+    """Convert city name to IATA code."""
+    return _city_to_iata.get(city_name.strip().title(), "XXX")
 
 
-# at the bottom of optimiser.py
-def run_optimization(attendees: dict, weights: dict):
+# ------------------------------------------------------------------- #
+# 2. Mock travel leg generator (replace with real API later)
+# ------------------------------------------------------------------- #
+def find_best_travel_leg_MOCK(origin_iata: str, dest_iata: str, traveller_info=None):
+    if origin_iata == dest_iata:
+        return {"status": "success", "travel_hours": 0, "co2": 0, "cost": 0}
+    return {
+        "status": "success",
+        "travel_hours": float(np.random.uniform(5, 30)),
+        "co2": float(np.random.uniform(100, 800)),
+        "cost": float(np.random.uniform(150, 1200))
+    }
+
+
+# ------------------------------------------------------------------- #
+# 3. Helper functions
+# ------------------------------------------------------------------- #
+def calculate_fairness(hours_list):
+    return float(np.std(hours_list)) if hours_list else 0.0
+
+
+def normalize_weights(w):
+    total = sum(w.values())
+    if total == 0:
+        n = len(w)
+        return {k: 1/n for k in w}
+    return {k: v/total for k, v in w.items()}
+
+
+# ------------------------------------------------------------------- #
+# 4. MAIN OPTIMIZER – Accepts your JSON format exactly
+# ------------------------------------------------------------------- #
+def run_optimization(scenario_json, weights):
     """
-    Run optimization and return the best result.
-    weights must contain {'co2': float, 'mean_time': float, 'cost': float}
-    and sum to 1.0
+    Input:
+        scenario_json = {
+            "attendees": {"London": 4, "Paris": 10, ...},
+            "candidates": ["London", "Paris", ...]  # optional
+        }
+        weights = {"co2": 0.33, "mean_time": 0.33, "cost": 0.34}
+    Output: Same dict your Streamlit app expects
     """
-    if abs(sum(weights.values()) - 1.0) > 1e-6:
-        raise ValueError("Weights must sum to 1.0")
+    # --- 1. Parse attendees ---
+    attendees_raw = scenario_json.get("attendees", {})
+    if not isinstance(attendees_raw, dict):
+        raise ValueError("'attendees' must be a dictionary of city → count")
 
-    meeting_locations = [
-        o.get("office_name") for o in offices_data.get("offices", []) if o.get("office_name")
-    ]
+    attendees = []
+    for city, count in attendees_raw.items():
+        iata = city_to_iata(city)
+        if iata == "XXX":
+            continue  # skip unknown
+        try:
+            count = int(count)
+        except (ValueError, TypeError):
+            continue
+        attendees.extend([{"origin": iata}] * count)
 
-    results = {}
-    for location in meeting_locations:
-        metrics = compute_metrics(location)
-        if metrics:
-            results[location] = metrics
+    if not attendees:
+        raise ValueError("No valid attendees after city → IATA mapping.")
 
-    # Weighted score example
-    def compute_score(data):
-        return (
-            weights["co2"] * data["total_co2"] +
-            weights["mean_time"] * data["average_travel_hours"] +
-            weights["cost"] * data["stddev_travel_hours"]
-        )
+    # --- 2. Parse candidates ---
+    candidate_cities = scenario_json.get("candidates", list(attendees_raw.keys()))
+    candidates = [city_to_iata(c) for c in candidate_cities]
+    candidates = [c for c in candidates if c != "XXX"]
+    if not candidates:
+        raise ValueError("No valid candidate cities.")
 
-    best_office, best_metrics = min(results.items(), key=lambda x: compute_score(x[1]))
-    return {"best_office": best_office, "metrics": best_metrics, "all_results": results}
+    # --- 3. Weights ---
+    w_co2 = weights.get("co2", 0.33)
+    w_fairness = weights.get("mean_time", 0.33)
+    w_cost = weights.get("cost", 0.34)
 
+    # --- 4. Evaluate each candidate ---
+    records = []
+    for dest_iata in candidates:
+        total_co2 = total_cost = 0.0
+        travel_hours = []
+
+        for person in attendees:
+            leg = find_best_travel_leg_MOCK(person["origin"], dest_iata)
+            if leg["status"] != "success":
+                continue
+            total_co2 += leg["co2"]
+            total_cost += leg["cost"]
+            travel_hours.append(leg["travel_hours"])
+
+        fairness = calculate_fairness(travel_hours)
+        records.append({
+            "candidate_city": dest_iata,
+            "total_co2": total_co2,
+            "fairness_score": fairness,
+            "total_cost": total_cost
+        })
+
+    df = pd.DataFrame(records)
+    if df.empty:
+        raise ValueError("No travel data generated.")
+
+    # --- 5. Normalize & score ---
+    scaler = MinMaxScaler()
+    df[["norm_co2", "norm_fairness", "norm_cost"]] = scaler.fit_transform(
+        df[["total_co2", "fairness_score", "total_cost"]]
+    )
+
+    norm_w = normalize_weights({"co2": w_co2, "fairness": w_fairness, "cost": w_cost})
+    df["final_score"] = (
+        norm_w["co2"] * df["norm_co2"] +
+        norm_w["fairness"] * df["norm_fairness"] +
+        norm_w["cost"] * df["norm_cost"]
+    )
+
+    best = df.sort_values("final_score").iloc[0]
+
+    # --- 6. Return UI-friendly result ---
+    return {
+        "best_office": best["candidate_city"],
+        "metrics": {
+            "total_co2": round(best["total_co2"], 2),
+            "stddev_travel_hours": round(best["fairness_score"], 2),
+            "total_cost": round(best["total_cost"], 2)
+        },
+        "all_results": df.to_dict("records"),
+        "final_score": round(best["final_score"], 3)
+    }
