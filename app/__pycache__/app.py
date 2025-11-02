@@ -215,13 +215,23 @@ col1, col2 = st.columns([3, 1])
 
 with col1:
     st.header("Map Visualization")
-    st.info("Map will display the best city and travel paths here.")
-    st.empty()
+    # Import and render map dynamically after optimization
+    try:
+        import importlib
+        map_test = importlib.import_module("map_test")  # safer for reruns
+        map_test.render_map()
+    except Exception as e:
+        st.warning(f"Could not load map: {e}")
 
     st.divider()
     st.header("Candidate Comparison")
-    st.info("Comparison table and Pareto plot will appear here.")
-    st.empty()
+    # Import and render graph dynamically after optimization
+    try:
+        graph_test = importlib.import_module("graph_test")
+        graph_test.render_graph()
+    except Exception as e:
+        st.warning(f"Could not load graph: {e}")
+
 
 with col2:
     st.header("Summary")
