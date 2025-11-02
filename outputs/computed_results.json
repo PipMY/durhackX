@@ -1,0 +1,185 @@
+{
+    "best_office_location": "Paris",
+    "metrics": {
+        "total_co2": 60.0,
+        "average_travel_hours": 0.5,
+        "median_travel_hours": 0.5,
+        "stddev_travel_hours": 0.5,
+        "max_travel_hours": 1.0,
+        "min_travel_hours": 0.0,
+        "attendee_travel_hours": {
+            "London": 1.0,
+            "Paris": 0.0
+        }
+    },
+    "all_results": {
+        "New York": {
+            "total_co2": 2560.0,
+            "average_travel_hours": 7.25,
+            "median_travel_hours": 7.25,
+            "stddev_travel_hours": 0.25,
+            "max_travel_hours": 7.5,
+            "min_travel_hours": 7.0,
+            "attendee_travel_hours": {
+                "London": 7.0,
+                "Paris": 7.5
+            }
+        },
+        "London": {
+            "total_co2": 90.0,
+            "average_travel_hours": 0.5,
+            "median_travel_hours": 0.5,
+            "stddev_travel_hours": 0.5,
+            "max_travel_hours": 1.0,
+            "min_travel_hours": 0.0,
+            "attendee_travel_hours": {
+                "London": 0.0,
+                "Paris": 1.0
+            }
+        },
+        "Paris": {
+            "total_co2": 60.0,
+            "average_travel_hours": 0.5,
+            "median_travel_hours": 0.5,
+            "stddev_travel_hours": 0.5,
+            "max_travel_hours": 1.0,
+            "min_travel_hours": 0.0,
+            "attendee_travel_hours": {
+                "London": 1.0,
+                "Paris": 0.0
+            }
+        },
+        "Hong Kong": {
+            "total_co2": 5500.0,
+            "average_travel_hours": 11.5,
+            "median_travel_hours": 11.5,
+            "stddev_travel_hours": 0.0,
+            "max_travel_hours": 11.5,
+            "min_travel_hours": 11.5,
+            "attendee_travel_hours": {
+                "London": 11.5,
+                "Paris": 11.5
+            }
+        },
+        "Singapore": {
+            "total_co2": 6000.0,
+            "average_travel_hours": 13.0,
+            "median_travel_hours": 13.0,
+            "stddev_travel_hours": 0.0,
+            "max_travel_hours": 13.0,
+            "min_travel_hours": 13.0,
+            "attendee_travel_hours": {
+                "London": 13.0,
+                "Paris": 13.0
+            }
+        },
+        "Mumbai": {
+            "total_co2": 4000.0,
+            "average_travel_hours": 9.5,
+            "median_travel_hours": 9.5,
+            "stddev_travel_hours": 0.0,
+            "max_travel_hours": 9.5,
+            "min_travel_hours": 9.5,
+            "attendee_travel_hours": {
+                "London": 9.5,
+                "Paris": 9.5
+            }
+        },
+        "Dubai": {
+            "total_co2": 3000.0,
+            "average_travel_hours": 7.0,
+            "median_travel_hours": 7.0,
+            "stddev_travel_hours": 0.0,
+            "max_travel_hours": 7.0,
+            "min_travel_hours": 7.0,
+            "attendee_travel_hours": {
+                "London": 7.0,
+                "Paris": 7.0
+            }
+        },
+        "Shanghai": {
+            "total_co2": 5250.0,
+            "average_travel_hours": 11.0,
+            "median_travel_hours": 11.0,
+            "stddev_travel_hours": 0.0,
+            "max_travel_hours": 11.0,
+            "min_travel_hours": 11.0,
+            "attendee_travel_hours": {
+                "London": 11.0,
+                "Paris": 11.0
+            }
+        },
+        "Zurich": {
+            "total_co2": 250.0,
+            "average_travel_hours": 2.0,
+            "median_travel_hours": 2.0,
+            "stddev_travel_hours": 0.0,
+            "max_travel_hours": 2.0,
+            "min_travel_hours": 2.0,
+            "attendee_travel_hours": {
+                "London": 2.0,
+                "Paris": 2.0
+            }
+        },
+        "Geneva": {
+            "total_co2": 250.0,
+            "average_travel_hours": 1.5,
+            "median_travel_hours": 1.5,
+            "stddev_travel_hours": 0.0,
+            "max_travel_hours": 1.5,
+            "min_travel_hours": 1.5,
+            "attendee_travel_hours": {
+                "London": 1.5,
+                "Paris": 1.5
+            }
+        },
+        "Aarhus": {
+            "total_co2": 275.0,
+            "average_travel_hours": 2.0,
+            "median_travel_hours": 2.0,
+            "stddev_travel_hours": 0.0,
+            "max_travel_hours": 2.0,
+            "min_travel_hours": 2.0,
+            "attendee_travel_hours": {
+                "London": 2.0,
+                "Paris": 2.0
+            }
+        },
+        "Sydney": {
+            "total_co2": 9000.0,
+            "average_travel_hours": 21.0,
+            "median_travel_hours": 21.0,
+            "stddev_travel_hours": 0.0,
+            "max_travel_hours": 21.0,
+            "min_travel_hours": 21.0,
+            "attendee_travel_hours": {
+                "London": 21.0,
+                "Paris": 21.0
+            }
+        },
+        "Wroclaw": {
+            "total_co2": 300.0,
+            "average_travel_hours": 2.5,
+            "median_travel_hours": 2.5,
+            "stddev_travel_hours": 0.0,
+            "max_travel_hours": 2.5,
+            "min_travel_hours": 2.5,
+            "attendee_travel_hours": {
+                "London": 2.5,
+                "Paris": 2.5
+            }
+        },
+        "Budapest": {
+            "total_co2": 325.0,
+            "average_travel_hours": 2.5,
+            "median_travel_hours": 2.5,
+            "stddev_travel_hours": 0.0,
+            "max_travel_hours": 2.5,
+            "min_travel_hours": 2.5,
+            "attendee_travel_hours": {
+                "London": 2.5,
+                "Paris": 2.5
+            }
+        }
+    }
+}
