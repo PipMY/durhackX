@@ -1,28 +1,44 @@
 import json
-import statistics
+import csv
+from math import radians, sin, cos, sqrt, atan2
 from pathlib import Path
+import statistics
 
 # -----------------------------------
-# 🌍 Constants
+# 🌍 Constants & Config
 # -----------------------------------
-FLIGHT_SPEED_KMH = 800            # Average flight speed
-CO2_PER_KM_PER_PERSON = 0.1       # Default fallback (kg CO₂ / km / person)
+FLIGHT_SPEED_KMH = 800.0
+CO2_PER_KM_PER_PERSON = 0.1      # fallback kg CO2 per km per person
+PRICE_PER_KM_GBP = 0.12          # fallback price per km per person (GBP)
 
-# -----------------------------------
-# 📂 Load data safely using pathlib
-# -----------------------------------
-BASE_DIR = Path(__file__).resolve().parent.parent  # DURHACKX root
+# Files setup using pathlib
+BASE_DIR = Path(__file__).resolve().parent.parent
 OFFICE_FILE = BASE_DIR / "data" / "clean" / "office_dist.json"
-INPUT_FILE = BASE_DIR / "sample_inputs" / "input_3.json"
+INPUT_FILE = BASE_DIR / "sample_inputs" / "input_1.json"
+AIRPORTS_CSV = BASE_DIR / "data" / "clean" / "airports.csv"
+OUTPUT_FILE = BASE_DIR / "outputs" / "computed_results_with_centroid.json"
 
-# Load office distance data
+# -----------------------------------
+# 🛠️ Helper Functions
+# -----------------------------------
+def haversine(lat1, lon1, lat2, lon2):
+    """Calculate great circle distance between two lat/lon points."""
+    R = 6371.0  # Earth radius in km
+    dlat = radians(lat2 - lat1)
+    dlon = radians(lon2 - lon1)
+    a = sin(dlat/2)**2 + cos(radians(lat1)) * cos(radians(lat2)) * sin(dlon/2)**2
+    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+    return R * c
+
+# -----------------------------------
+# 📂 Load Data
+# -----------------------------------
 try:
     with open(OFFICE_FILE, "r") as f:
         offices_data = json.load(f)
 except FileNotFoundError:
     raise FileNotFoundError(f"❌ Could not find office distance file at {OFFICE_FILE}")
 
-# Load meeting input (attendees per office)
 try:
     with open(INPUT_FILE, "r") as f:
         meeting_input = json.load(f)
@@ -30,6 +46,13 @@ except FileNotFoundError:
     raise FileNotFoundError(f"❌ Could not find meeting input file at {INPUT_FILE}")
 
 attendees = meeting_input.get("attendees", {})
+
+# Get and normalize weights from input
+raw_weights = meeting_input.get("weights", {"co2": 0.5, "average_travel": 0.3, "fairness": 0.2})
+weights_keys = ("co2", "average_travel", "fairness")
+weights = {k: float(raw_weights.get(k, 0.0)) for k in weights_keys}
+total_w = sum(weights.values()) or 1.0
+weights = {k: weights[k] / total_w for k in weights_keys}
 
 # -----------------------------------
 # ⚙️ Compute travel & emissions metrics
@@ -206,17 +229,23 @@ if total_weight:
 # 📊 Compute Final Results
 # -----------------------------------
 output = {
-    "best_office_location": best_office,
-    "metrics": best_metrics,
-    "all_results": results
+    "weights_used": weights,
+    "office_metrics": results,
+    "centroid_info": {
+        "latitude": centroid_lat if total_weight else None,
+        "longitude": centroid_lon if total_weight else None,
+        "nearest_airport": centroid_airport_candidate
+    }
 }
 
-print(json.dumps(output, indent=4))
+# Ensure output directory exists
+OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
-# Optional: Save to outputs folder
-OUTPUT_FILE = BASE_DIR / "outputs" / "computed_results.json"
-with open(OUTPUT_FILE, "w") as f:
+# Save results
+with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     json.dump(output, f, indent=4)
+
+print(json.dumps(output, indent=4))
 print(f"\n✅ Results saved to {OUTPUT_FILE}")
 
 

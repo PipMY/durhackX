@@ -157,29 +157,26 @@ if st.session_state.loading:
 st.sidebar.header("Settings")
 st.sidebar.markdown("Upload your data and adjust preferences:")
 
-import streamlit as st
-
-# Sliders (independent)
+# Sliders for weighting
 w_co2 = st.sidebar.slider("Weight for CO₂", 0.0, 1.0, 0.33, 0.01)
 w_cost = st.sidebar.slider("Weight for Cost", 0.0, 1.0, 0.33, 0.01)
-w_mean_distance = st.sidebar.slider("Weight for Mean Distance", 0.0, 1.0, 0.34, 0.01)
+w_mean_distance = st.sidebar.slider("Weight for Fairness (Mean Travel Time)", 0.0, 1.0, 0.34, 0.01)
 
-# Normalization function
+# Normalize weights
 def normalize_weights(*weights):
     total = sum(weights)
     if total == 0:
-        return [1/len(weights)] * len(weights)
+        return [1 / len(weights)] * len(weights)
     return [w / total for w in weights]
 
-# Apply normalization
 w_co2, w_cost, w_mean_distance = normalize_weights(w_co2, w_cost, w_mean_distance)
 
-# Display normalized weights
-st.sidebar.write(f"Normalized Weights:")
-st.sidebar.write(f"CO₂: {w_co2:.2f}, Cost: {w_cost:.2f}, Distance: {w_mean_distance:.2f}")
+st.sidebar.write(f"**Normalized Weights:**")
+st.sidebar.write(f"CO₂: {w_co2:.2f}, Cost: {w_cost:.2f}, Fairness: {w_mean_distance:.2f}")
 
 uploaded_file = st.sidebar.file_uploader("Upload attendee data (JSON)", type=["json"], key="data_uploader")
 
+# ---------- RUN OPTIMIZATION BUTTON ----------
 if st.sidebar.button("**Run Optimization**"):
     if uploaded_file is None:
         st.sidebar.warning("Please upload a JSON file first.")
@@ -192,19 +189,14 @@ if st.sidebar.button("**Run Optimization**"):
                 "cost": w_cost
             }
 
+            # Store data and trigger loading state
+            st.session_state.attendees = attendees
+            st.session_state.weights = weights
             st.session_state.loading = True
             st.rerun()
 
-            results = run_optimization(attendees["attendees"], weights)
-            best_city = results["best_office"]
-            best_metrics = results["metrics"]
-
-            st.metric("Best City", best_city)
-            st.metric("Total CO₂", f'{best_metrics["total_co2"]} kg')
-            st.metric("Fairness (stddev hrs)", best_metrics["stddev_travel_hours"])
-
         except Exception as e:
-            st.sidebar.error(f"Error running optimization: {e}")
+            st.sidebar.error(f"Error preparing optimization: {e}")
 
 st.sidebar.divider()
 st.sidebar.caption("Created at DurHack — Team BridgeBuilders")
@@ -243,9 +235,27 @@ with col1:
 
 with col2:
     st.header("Summary")
-    st.metric("Best City", "—")
-    st.metric("Total CO₂", "—")
-    st.metric("Fairness Score", "—")
+
+    # ---------- RUN OPTIMIZATION AFTER LOADING ----------
+    if not st.session_state.loading and "attendees" in st.session_state:
+        try:
+            results = run_optimization(
+                st.session_state.attendees["attendees"],
+                st.session_state.weights
+            )
+            best_city = results["best_office"]
+            best_metrics = results["metrics"]
+
+            st.metric("Best City", best_city)
+            st.metric("Total CO₂", f'{best_metrics["total_co2"]} kg')
+            st.metric("Fairness (stddev hrs)", best_metrics["stddev_travel_hours"])
+
+        except Exception as e:
+            st.error(f"Error running optimization: {e}")
+    else:
+        st.metric("Best City", "—")
+        st.metric("Total CO₂", "—")
+        st.metric("Fairness Score", "—")
 
     st.divider()
     st.header("Rationale")
