@@ -3,22 +3,8 @@ import json
 from src.optimiser import run_optimization
 
 # The input JSON provided by the user
-scenario_json = {
-    "attendees": {
-        "London": 4,
-        "Paris": 10,
-        "Zurich": 7,
-        "Geneva": 1
-    },
-    "availability_window": {
-        "start": "2024-01-04T12:30:00Z",
-        "end": "2024-01-08T12:00:00Z"
-    },
-    "event_duration": {
-        "days": 1,
-        "hours": 2
-    }
-}
+with open('sample_inputs/input_2.json', 'r') as f:
+    scenario_json = json.load(f)
 
 # Define the weights for the optimization
 weights = {

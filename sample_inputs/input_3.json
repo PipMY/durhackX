@@ -16,8 +16,8 @@
 		"Budapest": 14
 	},
 	"availability_window": {
-		"start": "2026-02-11T07:30:00Z",
-		"end": "2026-03-11T10:00:00Z"
+		"start": "2024-02-11T07:30:00Z",
+		"end": "2024-03-11T10:00:00Z"
 	},
 	"event_duration": {
 		"days": 4,

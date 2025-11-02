@@ -90,7 +90,7 @@ def calculate_fairness(hours_list):
     return float(np.std(hours_list)) if hours_list else 0.0
 
 
-def normalize_weights(w):
+def normalise_weights(w):
     total = sum(w.values())
     if total == 0:
         n = len(w)
@@ -122,11 +122,16 @@ def evaluate_candidate(dest_iata, attendees, arrival_datetime):
         return None
 
     fairness = calculate_fairness(travel_hours)
+    mean_time = float(np.mean(travel_hours)) if travel_hours else 0.0
+    median_time = float(np.median(travel_hours)) if travel_hours else 0.0
     return {
         "candidate_city": dest_iata,
         "total_co2": total_co2,
         "fairness_score": fairness,
-        "total_cost": total_cost
+        "total_cost": total_cost,
+        # Include both for compatibility; UI prefers mean_time
+        "mean_time": mean_time,
+        "median_time": median_time
     }
 
 
@@ -199,17 +204,17 @@ def run_optimization(scenario_json, weights):
     if df.empty:
         raise ValueError("No travel data could be generated for any candidate city.")
 
-    # --- 5. Normalize & score ---
+    # --- 5. Normalise & score ---
     scaler = MinMaxScaler()
-    df[["norm_co2", "norm_fairness", "norm_cost"]] = scaler.fit_transform(
+    df[["normalised_co2", "normalised_fairness", "normalised_cost"]] = scaler.fit_transform(
         df[["total_co2", "fairness_score", "total_cost"]]
     )
 
-    norm_w = normalize_weights({"co2": w_co2, "fairness": w_fairness, "cost": w_cost})
+    norm_w = normalise_weights({"co2": w_co2, "fairness": w_fairness, "cost": w_cost})
     df["final_score"] = (
-        norm_w["co2"] * df["norm_co2"] +
-        norm_w["fairness"] * df["norm_fairness"] +
-        norm_w["cost"] * df["norm_cost"]
+        norm_w["co2"] * df["normalised_co2"] +
+        norm_w["fairness"] * df["normalised_fairness"] +
+        norm_w["cost"] * df["normalised_cost"]
     )
 
     best = df.sort_values("final_score").iloc[0]
@@ -220,7 +225,10 @@ def run_optimization(scenario_json, weights):
         "metrics": {
             "total_co2": round(best["total_co2"], 2),
             "stddev_travel_hours": round(best["fairness_score"], 2),
-            "total_cost": round(best["total_cost"], 2)
+            "total_cost": round(best["total_cost"], 2),
+            # Prefer mean for UI, keep median for backwards compatibility
+            "mean_travel_hours": round(best.get("mean_time", 0.0), 2),
+            "median_travel_hours": round(best.get("median_time", 0.0), 2)
         },
         "all_results": df.to_dict("records"),
         "final_score": round(best["final_score"], 3)

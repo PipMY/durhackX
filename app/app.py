@@ -6,12 +6,19 @@ from pathlib import Path
 
 # ---------- PATH SETUP ----------
 ROOT_DIR = Path(__file__).resolve().parent
-sys.path.append(str(ROOT_DIR))
+# Ensure project root is on sys.path (parent of app/)
+PROJECT_ROOT = ROOT_DIR.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.optimiser import run_optimization
+# Import optimiser module and force a reload to avoid stale state in Streamlit
+import importlib
+import src.optimiser as optimiser_mod
+optimiser_mod = importlib.reload(optimiser_mod)
+run_optimization = optimiser_mod.run_optimization
 
 # ---------- PAGE CONFIG ----------
-st.set_page_config(page_title="QRT Meeting Optimizer", layout="wide")
+st.set_page_config(page_title="QRT Meeting Optimiser", layout="wide")
 
 # ---------- CUSTOM STYLE ----------
 st.markdown(
@@ -44,7 +51,7 @@ if total > 0:
     w_cost /= total
     w_fairness /= total
 
-st.sidebar.write("**Normalized Weights:**")
+st.sidebar.write("**Normalised Weights:**")
 st.sidebar.write(f"CO₂: {w_co2:.2f} | Cost: {w_cost:.2f} | Fairness: {w_fairness:.2f}")
 
 # FILE UPLOADER
@@ -55,14 +62,15 @@ uploaded_file = st.sidebar.file_uploader(
 )
 
 # ---------- RUN OPTIMIZATION ----------
-if st.sidebar.button("Run Optimization", type="primary"):
+if st.sidebar.button("Run Optimisation", type="primary"):
     if not uploaded_file:
         st.sidebar.error("Please upload a JSON file.")
     else:
-        with st.spinner("Optimizing..."):
+        with st.spinner("Optimising..."):
             try:
                 raw_text = uploaded_file.read().decode("utf-8").strip()
                 scenario = json.loads(raw_text)
+                st.session_state.scenario = scenario
 
                 # Optional debug
                 st.sidebar.code(raw_text, language="json")
@@ -77,7 +85,7 @@ if st.sidebar.button("Run Optimization", type="primary"):
                 results = run_optimization(scenario, weights)
 
                 st.session_state.results = results
-                st.success("Optimization complete!")
+                st.success("Optimisation complete!")
                 st.rerun()
 
             except json.JSONDecodeError as e:
@@ -91,7 +99,7 @@ with col_logo:
     if Path("qrt-logo.svg").exists():
         st.image("qrt-logo.svg", width=100)
 with col_title:
-    st.title("EcoMeet Optimizer")
+    st.title("EcoMeet Optimiser")
     st.subheader("Find the most sustainable and fair event location.")
 
 st.divider()
@@ -104,7 +112,10 @@ with col1:
     try:
         import importlib
         map_mod = importlib.import_module("map_test")
-        map_mod.render_map()
+        # Pass both scenario and results to the map
+        scenario = st.session_state.get("scenario")
+        results = st.session_state.get("results")
+        map_mod.render_map(scenario, results)
     except Exception as e:
         st.warning(f"Map module error: {e}")
 
@@ -112,7 +123,9 @@ with col1:
     st.header("Candidate Comparison")
     try:
         graph_mod = importlib.import_module("graph_test")
-        graph_mod.render_graph()
+        # Pass the full results to the graph renderer
+        results = st.session_state.get("results")
+        graph_mod.render_graph(results)
     except Exception as e:
         st.warning(f"Graph module error: {e}")
 
@@ -126,22 +139,45 @@ with col2:
         st.metric("Best City", r["best_office"])
         st.metric("Total CO₂", f'{m["total_co2"]} kg')
         st.metric("Fairness (std-dev hrs)", f'{m["stddev_travel_hours"]} hrs')
-        st.metric("Total Cost", f'${m["total_cost"]}')
+        # Mean travel time: prefer metrics.mean_travel_hours; fallback to best record's mean_time/median_time
+        mean_val = m.get("mean_travel_hours")
+        if mean_val is None:
+            # Backward compatibility with older results
+            try:
+                best_office = r.get("best_office")
+                all_results = r.get("all_results", []) or []
+                best_rec = next((it for it in all_results if it.get("candidate_city") == best_office), None)
+                if best_rec is not None:
+                    mean_val = (
+                        best_rec.get("mean_time")
+                        or best_rec.get("median_time")
+                        or best_rec.get("median_travel_hours")
+                    )
+            except Exception:
+                mean_val = None
+
+        mean_text = (
+            f"{float(mean_val):.2f}" if isinstance(mean_val, (int, float))
+            else (f"{float(mean_val):.2f}" if isinstance(mean_val, str) and mean_val.replace('.','',1).isdigit() else "N/A")
+        )
+        st.metric("Mean Travel Time", f'{mean_text} hrs')
+        st.metric("Total Cost", f'£{m["total_cost"]}')
     else:
         st.metric("Best City", "—")
         st.metric("Total CO₂", "—")
         st.metric("Fairness (std-dev hrs)", "—")
+        st.metric("Median Travel Time", "—")
         st.metric("Total Cost", "—")
 
     st.divider()
     st.header("Rationale")
     if "results" in st.session_state:
         st.write(
-            "The selected city minimizes the **weighted score** of CO₂, "
+            "The selected city minimises the **weighted score** of CO₂, "
             "travel fairness, and cost. Adjust sliders and re-run to explore."
         )
     else:
-        st.write("Upload a JSON file and click **Run Optimization**.")
+        st.write("Upload a JSON file and click **Run Optimisation**.")
 
 st.divider()
 st.caption("QRT — Meeting in the middle.")
