@@ -1,5 +1,6 @@
 import json
 import statistics
+import csv
 from pathlib import Path
 
 # -----------------------------------
@@ -14,6 +15,7 @@ CO2_PER_KM_PER_PERSON = 0.1       # Default fallback (kg CO₂ / km / person)
 BASE_DIR = Path(__file__).resolve().parent.parent  # DURHACKX root
 OFFICE_FILE = BASE_DIR / "data" / "clean" / "office_dist.json"
 INPUT_FILE = BASE_DIR / "sample_inputs" / "input_3.json"
+AIRPORTS_CSV = BASE_DIR / "data" / "clean" / "airports.csv"
 
 # Load office distance data
 try:
