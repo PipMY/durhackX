@@ -5,11 +5,11 @@ FLIGHT_SPEED_KMH = 800  # average flight speed
 CO2_PER_KM_PER_PERSON = 0.1  # kg CO2 per km per person
 
 # Load office distances JSON
-with open("durhackX/data/clean/office_dist.json", "r") as f:
+with open("data/clean/office_dist.json", "r") as f:
     offices_data = json.load(f)
 
 # Load attendees and event info JSON
-with open("durhackX/sample_inputs/input_3.json", "r") as f:
+with open("sample_inputs/input_3.json", "r") as f:
     meeting_input = json.load(f)
 
 attendees = meeting_input["attendees"]

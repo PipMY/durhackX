@@ -14,8 +14,8 @@
           "distance_km": 5567,
           "distance_miles": 3460,
           "estimated_travel_time_hours": 7.0,
-          "co2_kg": 500,
-          "estimated_price_gbp": 890.72
+          "co2_kg": 119.916,
+          "estimated_price_gbp": 740.73
         },
         {
           "office_name": "Paris",
@@ -23,8 +23,8 @@
           "distance_km": 5837,
           "distance_miles": 3628,
           "estimated_travel_time_hours": 7.5,
-          "co2_kg": 520,
-          "estimated_price_gbp": 933.92
+          "co2_kg": 171.05,
+          "estimated_price_gbp": 757.77
         },
         {
           "office_name": "Mumbai",
@@ -32,8 +32,8 @@
           "distance_km": 11730,
           "distance_miles": 7289,
           "estimated_travel_time_hours": 15.5,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1876.8
+          "co2_kg": 363.135,
+          "estimated_price_gbp": 982.11
         },
         {
           "office_name": "Dubai",
@@ -41,8 +41,8 @@
           "distance_km": 11000,
           "distance_miles": 6840,
           "estimated_travel_time_hours": 14.0,
-          "co2_kg": 1100,
-          "estimated_price_gbp": 1760.0
+          "co2_kg": 432.447,
+          "estimated_price_gbp": 1122.14
         },
         {
           "office_name": "Singapore",
@@ -50,8 +50,8 @@
           "distance_km": 15300,
           "distance_miles": 9500,
           "estimated_travel_time_hours": 18.0,
-          "co2_kg": 1600,
-          "estimated_price_gbp": 2448.0
+          "co2_kg": 287.495,
+          "estimated_price_gbp": 1132.86
         },
         {
           "office_name": "Hong Kong",
@@ -59,8 +59,8 @@
           "distance_km": 12950,
           "distance_miles": 8045,
           "estimated_travel_time_hours": 16.0,
-          "co2_kg": 1400,
-          "estimated_price_gbp": 2072.0
+          "co2_kg": 239.381,
+          "estimated_price_gbp": 1100.47
         },
         {
           "office_name": "Shanghai",
@@ -68,8 +68,8 @@
           "distance_km": 11700,
           "distance_miles": 7270,
           "estimated_travel_time_hours": 15.5,
-          "co2_kg": 1300,
-          "estimated_price_gbp": 1872.0
+          "co2_kg": 249.229,
+          "estimated_price_gbp": 969.07
         },
         {
           "office_name": "Zurich",
@@ -77,8 +77,8 @@
           "distance_km": 6370,
           "distance_miles": 3959,
           "estimated_travel_time_hours": 8.0,
-          "co2_kg": 540,
-          "estimated_price_gbp": 1019.2
+          "co2_kg": 137.039,
+          "estimated_price_gbp": 834.5
         },
         {
           "office_name": "Geneva",
@@ -86,8 +86,8 @@
           "distance_km": 6290,
           "distance_miles": 3907,
           "estimated_travel_time_hours": 8.0,
-          "co2_kg": 530,
-          "estimated_price_gbp": 1006.4
+          "co2_kg": 135.852,
+          "estimated_price_gbp": 829.49
         },
         {
           "office_name": "Aarhus",
@@ -96,7 +96,7 @@
           "distance_miles": 3872,
           "estimated_travel_time_hours": 8.0,
           "co2_kg": 520,
-          "estimated_price_gbp": 996.8
+          "estimated_price_gbp": 786.25
         },
         {
           "office_name": "Sydney",
@@ -105,7 +105,7 @@
           "distance_miles": 9930,
           "estimated_travel_time_hours": 20.0,
           "co2_kg": 1700,
-          "estimated_price_gbp": 2556.8
+          "estimated_price_gbp": 1107.7
         },
         {
           "office_name": "Wroclaw",
@@ -114,7 +114,7 @@
           "distance_miles": 3959,
           "estimated_travel_time_hours": 8.5,
           "co2_kg": 540,
-          "estimated_price_gbp": 1019.2
+          "estimated_price_gbp": 684.76
         },
         {
           "office_name": "Budapest",
@@ -123,7 +123,7 @@
           "distance_miles": 4020,
           "estimated_travel_time_hours": 8.5,
           "co2_kg": 550,
-          "estimated_price_gbp": 1035.2
+          "estimated_price_gbp": 808.23
         }
       ]
     },
@@ -141,8 +141,8 @@
           "distance_km": 5567,
           "distance_miles": 3460,
           "estimated_travel_time_hours": 7.0,
-          "co2_kg": 500,
-          "estimated_price_gbp": 890.72
+          "co2_kg": 136.662,
+          "estimated_price_gbp": 638.8
         },
         {
           "office_name": "Paris",
@@ -150,8 +150,8 @@
           "distance_km": 344,
           "distance_miles": 214,
           "estimated_travel_time_hours": 1.0,
-          "co2_kg": 30,
-          "estimated_price_gbp": 55.04
+          "co2_kg": 4.65,
+          "estimated_price_gbp": 172.18
         },
         {
           "office_name": "Mumbai",
@@ -159,8 +159,8 @@
           "distance_km": 7200,
           "distance_miles": 4474,
           "estimated_travel_time_hours": 9.5,
-          "co2_kg": 800,
-          "estimated_price_gbp": 1152.0
+          "co2_kg": 158.888,
+          "estimated_price_gbp": 843.79
         },
         {
           "office_name": "Dubai",
@@ -168,8 +168,8 @@
           "distance_km": 5500,
           "distance_miles": 3420,
           "estimated_travel_time_hours": 7.0,
-          "co2_kg": 600,
-          "estimated_price_gbp": 880.0
+          "co2_kg": 123.988,
+          "estimated_price_gbp": 742.71
         },
         {
           "office_name": "Singapore",
@@ -177,8 +177,8 @@
           "distance_km": 10840,
           "distance_miles": 6736,
           "estimated_travel_time_hours": 13.0,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1734.4
+          "co2_kg": 324.837,
+          "estimated_price_gbp": 1051.14
         },
         {
           "office_name": "Hong Kong",
@@ -186,8 +186,8 @@
           "distance_km": 9600,
           "distance_miles": 5965,
           "estimated_travel_time_hours": 11.5,
-          "co2_kg": 1100,
-          "estimated_price_gbp": 1536.0
+          "co2_kg": 192.859,
+          "estimated_price_gbp": 985.88
         },
         {
           "office_name": "Shanghai",
@@ -195,8 +195,8 @@
           "distance_km": 9200,
           "distance_miles": 5720,
           "estimated_travel_time_hours": 11.0,
-          "co2_kg": 1050,
-          "estimated_price_gbp": 1472.0
+          "co2_kg": 200.677,
+          "estimated_price_gbp": 898.39
         },
         {
           "office_name": "Zurich",
@@ -204,8 +204,8 @@
           "distance_km": 890,
           "distance_miles": 553,
           "estimated_travel_time_hours": 2.0,
-          "co2_kg": 50,
-          "estimated_price_gbp": 142.4
+          "co2_kg": 9.334,
+          "estimated_price_gbp": 227.37
         },
         {
           "office_name": "Geneva",
@@ -213,8 +213,8 @@
           "distance_km": 830,
           "distance_miles": 516,
           "estimated_travel_time_hours": 1.5,
-          "co2_kg": 50,
-          "estimated_price_gbp": 132.8
+          "co2_kg": 6.44,
+          "estimated_price_gbp": 207.23
         },
         {
           "office_name": "Aarhus",
@@ -223,7 +223,7 @@
           "distance_miles": 560,
           "estimated_travel_time_hours": 2.0,
           "co2_kg": 55,
-          "estimated_price_gbp": 144.0
+          "estimated_price_gbp": 229.93
         },
         {
           "office_name": "Sydney",
@@ -232,7 +232,7 @@
           "distance_miles": 10510,
           "estimated_travel_time_hours": 21.0,
           "co2_kg": 1800,
-          "estimated_price_gbp": 2704.0
+          "estimated_price_gbp": 1450.53
         },
         {
           "office_name": "Wroclaw",
@@ -241,7 +241,7 @@
           "distance_miles": 721,
           "estimated_travel_time_hours": 2.5,
           "co2_kg": 60,
-          "estimated_price_gbp": 185.6
+          "estimated_price_gbp": 255.43
         },
         {
           "office_name": "Budapest",
@@ -249,8 +249,8 @@
           "distance_km": 1450,
           "distance_miles": 902,
           "estimated_travel_time_hours": 2.5,
-          "co2_kg": 65,
-          "estimated_price_gbp": 232.0
+          "co2_kg": 17.576,
+          "estimated_price_gbp": 303.21
         }
       ]
     },
@@ -268,8 +268,8 @@
           "distance_km": 5837,
           "distance_miles": 3628,
           "estimated_travel_time_hours": 7.5,
-          "co2_kg": 520,
-          "estimated_price_gbp": 933.92
+          "co2_kg": 118.89,
+          "estimated_price_gbp": 824.44
         },
         {
           "office_name": "London",
@@ -277,8 +277,8 @@
           "distance_km": 344,
           "distance_miles": 214,
           "estimated_travel_time_hours": 1.0,
-          "co2_kg": 30,
-          "estimated_price_gbp": 55.04
+          "co2_kg": 4.917,
+          "estimated_price_gbp": 168.32
         },
         {
           "office_name": "Mumbai",
@@ -286,8 +286,8 @@
           "distance_km": 7200,
           "distance_miles": 4474,
           "estimated_travel_time_hours": 9.5,
-          "co2_kg": 800,
-          "estimated_price_gbp": 1152.0
+          "co2_kg": 133.452,
+          "estimated_price_gbp": 763.75
         },
         {
           "office_name": "Dubai",
@@ -295,8 +295,8 @@
           "distance_km": 5500,
           "distance_miles": 3420,
           "estimated_travel_time_hours": 7.0,
-          "co2_kg": 600,
-          "estimated_price_gbp": 880.0
+          "co2_kg": 221.466,
+          "estimated_price_gbp": 670.03
         },
         {
           "office_name": "Singapore",
@@ -304,8 +304,8 @@
           "distance_km": 10840,
           "distance_miles": 6736,
           "estimated_travel_time_hours": 13.0,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1734.4
+          "co2_kg": 199.291,
+          "estimated_price_gbp": 1007.61
         },
         {
           "office_name": "Hong Kong",
@@ -313,8 +313,8 @@
           "distance_km": 9600,
           "distance_miles": 5965,
           "estimated_travel_time_hours": 11.5,
-          "co2_kg": 1100,
-          "estimated_price_gbp": 1536.0
+          "co2_kg": 181.208,
+          "estimated_price_gbp": 945.14
         },
         {
           "office_name": "Shanghai",
@@ -322,8 +322,8 @@
           "distance_km": 9200,
           "distance_miles": 5720,
           "estimated_travel_time_hours": 11.0,
-          "co2_kg": 1050,
-          "estimated_price_gbp": 1472.0
+          "co2_kg": 204.025,
+          "estimated_price_gbp": 860.33
         },
         {
           "office_name": "Zurich",
@@ -331,8 +331,8 @@
           "distance_km": 890,
           "distance_miles": 553,
           "estimated_travel_time_hours": 2.0,
-          "co2_kg": 50,
-          "estimated_price_gbp": 142.4
+          "co2_kg": 4.864,
+          "estimated_price_gbp": 265.73
         },
         {
           "office_name": "Geneva",
@@ -340,8 +340,8 @@
           "distance_km": 830,
           "distance_miles": 516,
           "estimated_travel_time_hours": 1.5,
-          "co2_kg": 50,
-          "estimated_price_gbp": 132.8
+          "co2_kg": 7.28,
+          "estimated_price_gbp": 230.45
         },
         {
           "office_name": "Aarhus",
@@ -350,7 +350,7 @@
           "distance_miles": 560,
           "estimated_travel_time_hours": 2.0,
           "co2_kg": 55,
-          "estimated_price_gbp": 144.0
+          "estimated_price_gbp": 230.13
         },
         {
           "office_name": "Sydney",
@@ -359,7 +359,7 @@
           "distance_miles": 10510,
           "estimated_travel_time_hours": 21.0,
           "co2_kg": 1800,
-          "estimated_price_gbp": 2704.0
+          "estimated_price_gbp": 1326.4
         },
         {
           "office_name": "Wroclaw",
@@ -368,7 +368,7 @@
           "distance_miles": 721,
           "estimated_travel_time_hours": 2.5,
           "co2_kg": 60,
-          "estimated_price_gbp": 185.6
+          "estimated_price_gbp": 247.47
         },
         {
           "office_name": "Budapest",
@@ -376,8 +376,8 @@
           "distance_km": 1450,
           "distance_miles": 902,
           "estimated_travel_time_hours": 2.5,
-          "co2_kg": 65,
-          "estimated_price_gbp": 232.0
+          "co2_kg": 14.037,
+          "estimated_price_gbp": 355.47
         }
       ]
     },
@@ -395,8 +395,8 @@
           "distance_km": 12950,
           "distance_miles": 8045,
           "estimated_travel_time_hours": 16.0,
-          "co2_kg": 1400,
-          "estimated_price_gbp": 2072.0
+          "co2_kg": 280.706,
+          "estimated_price_gbp": 1207.42
         },
         {
           "office_name": "London",
@@ -404,8 +404,8 @@
           "distance_km": 9600,
           "distance_miles": 5965,
           "estimated_travel_time_hours": 11.5,
-          "co2_kg": 1100,
-          "estimated_price_gbp": 1536.0
+          "co2_kg": 215.319,
+          "estimated_price_gbp": 1052.81
         },
         {
           "office_name": "Paris",
@@ -413,8 +413,8 @@
           "distance_km": 9600,
           "distance_miles": 5965,
           "estimated_travel_time_hours": 11.5,
-          "co2_kg": 1100,
-          "estimated_price_gbp": 1536.0
+          "co2_kg": 206.667,
+          "estimated_price_gbp": 1001.66
         },
         {
           "office_name": "Mumbai",
@@ -422,8 +422,8 @@
           "distance_km": 3800,
           "distance_miles": 2361,
           "estimated_travel_time_hours": 5.0,
-          "co2_kg": 450,
-          "estimated_price_gbp": 608.0
+          "co2_kg": 155.271,
+          "estimated_price_gbp": 626.92
         },
         {
           "office_name": "Dubai",
@@ -431,8 +431,8 @@
           "distance_km": 6000,
           "distance_miles": 3728,
           "estimated_travel_time_hours": 8.0,
-          "co2_kg": 700,
-          "estimated_price_gbp": 960.0
+          "co2_kg": 282.691,
+          "estimated_price_gbp": 745.74
         },
         {
           "office_name": "Singapore",
@@ -440,8 +440,8 @@
           "distance_km": 2600,
           "distance_miles": 1616,
           "estimated_travel_time_hours": 4.0,
-          "co2_kg": 300,
-          "estimated_price_gbp": 416.0
+          "co2_kg": 88.641,
+          "estimated_price_gbp": 527.19
         },
         {
           "office_name": "Shanghai",
@@ -449,8 +449,8 @@
           "distance_km": 1000,
           "distance_miles": 621,
           "estimated_travel_time_hours": 2.0,
-          "co2_kg": 50,
-          "estimated_price_gbp": 160.0
+          "co2_kg": 17.563,
+          "estimated_price_gbp": 272.04
         },
         {
           "office_name": "Zurich",
@@ -458,8 +458,8 @@
           "distance_km": 10500,
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "co2_kg": 202.805,
+          "estimated_price_gbp": 850.5
         },
         {
           "office_name": "Geneva",
@@ -468,7 +468,7 @@
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
           "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "estimated_price_gbp": 928.26
         },
         {
           "office_name": "Aarhus",
@@ -477,7 +477,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 962.81
         },
         {
           "office_name": "Sydney",
@@ -485,8 +485,8 @@
           "distance_km": 7800,
           "distance_miles": 4855,
           "estimated_travel_time_hours": 10.0,
-          "co2_kg": 900,
-          "estimated_price_gbp": 1248.0
+          "co2_kg": 220.461,
+          "estimated_price_gbp": 921.87
         },
         {
           "office_name": "Wroclaw",
@@ -495,7 +495,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 1077.78
         },
         {
           "office_name": "Budapest",
@@ -503,8 +503,8 @@
           "distance_km": 10600,
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
-          "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "co2_kg": 456.928,
+          "estimated_price_gbp": 969.92
         }
       ]
     },
@@ -522,8 +522,8 @@
           "distance_km": 15300,
           "distance_miles": 9500,
           "estimated_travel_time_hours": 18.0,
-          "co2_kg": 1600,
-          "estimated_price_gbp": 2448.0
+          "co2_kg": 282.256,
+          "estimated_price_gbp": 1330.04
         },
         {
           "office_name": "London",
@@ -531,8 +531,8 @@
           "distance_km": 10840,
           "distance_miles": 6736,
           "estimated_travel_time_hours": 13.0,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1734.4
+          "co2_kg": 348.073,
+          "estimated_price_gbp": 929.72
         },
         {
           "office_name": "Paris",
@@ -540,8 +540,8 @@
           "distance_km": 10840,
           "distance_miles": 6736,
           "estimated_travel_time_hours": 13.0,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1734.4
+          "co2_kg": 205.28,
+          "estimated_price_gbp": 950.69
         },
         {
           "office_name": "Mumbai",
@@ -549,8 +549,8 @@
           "distance_km": 2600,
           "distance_miles": 1616,
           "estimated_travel_time_hours": 4.0,
-          "co2_kg": 300,
-          "estimated_price_gbp": 416.0
+          "co2_kg": 49.026,
+          "estimated_price_gbp": 504.3
         },
         {
           "office_name": "Dubai",
@@ -558,8 +558,8 @@
           "distance_km": 6000,
           "distance_miles": 3728,
           "estimated_travel_time_hours": 8.0,
-          "co2_kg": 700,
-          "estimated_price_gbp": 960.0
+          "co2_kg": 250.358,
+          "estimated_price_gbp": 821.07
         },
         {
           "office_name": "Hong Kong",
@@ -567,8 +567,8 @@
           "distance_km": 2600,
           "distance_miles": 1616,
           "estimated_travel_time_hours": 4.0,
-          "co2_kg": 300,
-          "estimated_price_gbp": 416.0
+          "co2_kg": 90.822,
+          "estimated_price_gbp": 426.92
         },
         {
           "office_name": "Shanghai",
@@ -576,8 +576,8 @@
           "distance_km": 10500,
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "co2_kg": 125.348,
+          "estimated_price_gbp": 1000.83
         },
         {
           "office_name": "Zurich",
@@ -585,8 +585,8 @@
           "distance_km": 10500,
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "co2_kg": 322.026,
+          "estimated_price_gbp": 1003.6
         },
         {
           "office_name": "Geneva",
@@ -595,7 +595,7 @@
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
           "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "estimated_price_gbp": 1046.07
         },
         {
           "office_name": "Aarhus",
@@ -604,7 +604,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 889.7
         },
         {
           "office_name": "Sydney",
@@ -612,8 +612,8 @@
           "distance_km": 7800,
           "distance_miles": 4855,
           "estimated_travel_time_hours": 10.0,
-          "co2_kg": 900,
-          "estimated_price_gbp": 1248.0
+          "co2_kg": 113.738,
+          "estimated_price_gbp": 887.48
         },
         {
           "office_name": "Wroclaw",
@@ -622,7 +622,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 1074.41
         },
         {
           "office_name": "Budapest",
@@ -631,7 +631,7 @@
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
           "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "estimated_price_gbp": 861.4
         }
       ]
     },
@@ -649,8 +649,8 @@
           "distance_km": 11730,
           "distance_miles": 7289,
           "estimated_travel_time_hours": 15.5,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1876.8
+          "co2_kg": 399.255,
+          "estimated_price_gbp": 1108.34
         },
         {
           "office_name": "London",
@@ -658,8 +658,8 @@
           "distance_km": 7200,
           "distance_miles": 4474,
           "estimated_travel_time_hours": 9.5,
-          "co2_kg": 800,
-          "estimated_price_gbp": 1152.0
+          "co2_kg": 182.123,
+          "estimated_price_gbp": 895.58
         },
         {
           "office_name": "Paris",
@@ -667,8 +667,8 @@
           "distance_km": 7200,
           "distance_miles": 4474,
           "estimated_travel_time_hours": 9.5,
-          "co2_kg": 800,
-          "estimated_price_gbp": 1152.0
+          "co2_kg": 150.546,
+          "estimated_price_gbp": 782.86
         },
         {
           "office_name": "Dubai",
@@ -676,8 +676,8 @@
           "distance_km": 3800,
           "distance_miles": 2361,
           "estimated_travel_time_hours": 5.0,
-          "co2_kg": 450,
-          "estimated_price_gbp": 608.0
+          "co2_kg": 28.358,
+          "estimated_price_gbp": 645.75
         },
         {
           "office_name": "Singapore",
@@ -685,8 +685,8 @@
           "distance_km": 2600,
           "distance_miles": 1616,
           "estimated_travel_time_hours": 4.0,
-          "co2_kg": 300,
-          "estimated_price_gbp": 416.0
+          "co2_kg": 48.035,
+          "estimated_price_gbp": 440.78
         },
         {
           "office_name": "Hong Kong",
@@ -694,8 +694,8 @@
           "distance_km": 3800,
           "distance_miles": 2361,
           "estimated_travel_time_hours": 5.0,
-          "co2_kg": 450,
-          "estimated_price_gbp": 608.0
+          "co2_kg": 132.056,
+          "estimated_price_gbp": 601.16
         },
         {
           "office_name": "Shanghai",
@@ -704,7 +704,7 @@
           "distance_miles": 621,
           "estimated_travel_time_hours": 2.0,
           "co2_kg": 50,
-          "estimated_price_gbp": 160.0
+          "estimated_price_gbp": 259.95
         },
         {
           "office_name": "Zurich",
@@ -712,8 +712,8 @@
           "distance_km": 10500,
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "co2_kg": 164.026,
+          "estimated_price_gbp": 876.02
         },
         {
           "office_name": "Geneva",
@@ -722,7 +722,7 @@
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
           "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "estimated_price_gbp": 1096.67
         },
         {
           "office_name": "Aarhus",
@@ -731,7 +731,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 1060.33
         },
         {
           "office_name": "Sydney",
@@ -740,7 +740,7 @@
           "distance_miles": 4855,
           "estimated_travel_time_hours": 10.0,
           "co2_kg": 900,
-          "estimated_price_gbp": 1248.0
+          "estimated_price_gbp": 935.05
         },
         {
           "office_name": "Wroclaw",
@@ -749,7 +749,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 941.62
         },
         {
           "office_name": "Budapest",
@@ -758,7 +758,7 @@
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
           "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "estimated_price_gbp": 1029.69
         }
       ]
     },
@@ -776,8 +776,8 @@
           "distance_km": 11000,
           "distance_miles": 6840,
           "estimated_travel_time_hours": 14.0,
-          "co2_kg": 1100,
-          "estimated_price_gbp": 1760.0
+          "co2_kg": 497.227,
+          "estimated_price_gbp": 1091.83
         },
         {
           "office_name": "London",
@@ -785,8 +785,8 @@
           "distance_km": 5500,
           "distance_miles": 3420,
           "estimated_travel_time_hours": 7.0,
-          "co2_kg": 600,
-          "estimated_price_gbp": 880.0
+          "co2_kg": 147.425,
+          "estimated_price_gbp": 756.97
         },
         {
           "office_name": "Paris",
@@ -794,8 +794,8 @@
           "distance_km": 5500,
           "distance_miles": 3420,
           "estimated_travel_time_hours": 7.0,
-          "co2_kg": 600,
-          "estimated_price_gbp": 880.0
+          "co2_kg": 247.006,
+          "estimated_price_gbp": 818.84
         },
         {
           "office_name": "Mumbai",
@@ -803,8 +803,8 @@
           "distance_km": 3800,
           "distance_miles": 2361,
           "estimated_travel_time_hours": 5.0,
-          "co2_kg": 450,
-          "estimated_price_gbp": 608.0
+          "co2_kg": 26.908,
+          "estimated_price_gbp": 632.3
         },
         {
           "office_name": "Singapore",
@@ -812,8 +812,8 @@
           "distance_km": 6000,
           "distance_miles": 3728,
           "estimated_travel_time_hours": 8.0,
-          "co2_kg": 700,
-          "estimated_price_gbp": 960.0
+          "co2_kg": 254.209,
+          "estimated_price_gbp": 832.98
         },
         {
           "office_name": "Hong Kong",
@@ -821,8 +821,8 @@
           "distance_km": 6000,
           "distance_miles": 3728,
           "estimated_travel_time_hours": 8.0,
-          "co2_kg": 700,
-          "estimated_price_gbp": 960.0
+          "co2_kg": 248.414,
+          "estimated_price_gbp": 645.81
         },
         {
           "office_name": "Shanghai",
@@ -830,8 +830,8 @@
           "distance_km": 10500,
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "co2_kg": 157.391,
+          "estimated_price_gbp": 1036.53
         },
         {
           "office_name": "Zurich",
@@ -839,8 +839,8 @@
           "distance_km": 10500,
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "co2_kg": 125.095,
+          "estimated_price_gbp": 1101.44
         },
         {
           "office_name": "Geneva",
@@ -848,8 +848,8 @@
           "distance_km": 10600,
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
-          "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "co2_kg": 168.675,
+          "estimated_price_gbp": 906.83
         },
         {
           "office_name": "Aarhus",
@@ -858,7 +858,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 1051.8
         },
         {
           "office_name": "Sydney",
@@ -866,8 +866,8 @@
           "distance_km": 7800,
           "distance_miles": 4855,
           "estimated_travel_time_hours": 10.0,
-          "co2_kg": 900,
-          "estimated_price_gbp": 1248.0
+          "co2_kg": 472.316,
+          "estimated_price_gbp": 770.21
         },
         {
           "office_name": "Wroclaw",
@@ -876,7 +876,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 853.74
         },
         {
           "office_name": "Budapest",
@@ -884,8 +884,8 @@
           "distance_km": 10600,
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
-          "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "co2_kg": 39.472,
+          "estimated_price_gbp": 1008.72
         }
       ]
     },
@@ -903,8 +903,8 @@
           "distance_km": 11700,
           "distance_miles": 7270,
           "estimated_travel_time_hours": 15.5,
-          "co2_kg": 1300,
-          "estimated_price_gbp": 1872.0
+          "co2_kg": 364.663,
+          "estimated_price_gbp": 908.28
         },
         {
           "office_name": "London",
@@ -912,8 +912,8 @@
           "distance_km": 9200,
           "distance_miles": 5720,
           "estimated_travel_time_hours": 11.0,
-          "co2_kg": 1050,
-          "estimated_price_gbp": 1472.0
+          "co2_kg": 305.712,
+          "estimated_price_gbp": 938.22
         },
         {
           "office_name": "Paris",
@@ -921,8 +921,8 @@
           "distance_km": 9200,
           "distance_miles": 5720,
           "estimated_travel_time_hours": 11.0,
-          "co2_kg": 1050,
-          "estimated_price_gbp": 1472.0
+          "co2_kg": 318.236,
+          "estimated_price_gbp": 1018.5
         },
         {
           "office_name": "Mumbai",
@@ -930,8 +930,8 @@
           "distance_km": 1000,
           "distance_miles": 621,
           "estimated_travel_time_hours": 2.0,
-          "co2_kg": 50,
-          "estimated_price_gbp": 160.0
+          "co2_kg": 182.089,
+          "estimated_price_gbp": 243.46
         },
         {
           "office_name": "Dubai",
@@ -939,8 +939,8 @@
           "distance_km": 10500,
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "co2_kg": 173.35,
+          "estimated_price_gbp": 1079.08
         },
         {
           "office_name": "Singapore",
@@ -948,8 +948,8 @@
           "distance_km": 10500,
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "co2_kg": 130.478,
+          "estimated_price_gbp": 1008.79
         },
         {
           "office_name": "Hong Kong",
@@ -957,8 +957,8 @@
           "distance_km": 1000,
           "distance_miles": 621,
           "estimated_travel_time_hours": 2.0,
-          "co2_kg": 50,
-          "estimated_price_gbp": 160.0
+          "co2_kg": 48.8,
+          "estimated_price_gbp": 288.71
         },
         {
           "office_name": "Zurich",
@@ -966,8 +966,8 @@
           "distance_km": 10500,
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "co2_kg": 246.169,
+          "estimated_price_gbp": 993.35
         },
         {
           "office_name": "Geneva",
@@ -976,7 +976,7 @@
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
           "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "estimated_price_gbp": 1070.16
         },
         {
           "office_name": "Aarhus",
@@ -985,7 +985,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 996.84
         },
         {
           "office_name": "Sydney",
@@ -993,8 +993,8 @@
           "distance_km": 7800,
           "distance_miles": 4855,
           "estimated_travel_time_hours": 10.0,
-          "co2_kg": 900,
-          "estimated_price_gbp": 1248.0
+          "co2_kg": 157.589,
+          "estimated_price_gbp": 714.54
         },
         {
           "office_name": "Wroclaw",
@@ -1003,7 +1003,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 1027.39
         },
         {
           "office_name": "Budapest",
@@ -1011,8 +1011,8 @@
           "distance_km": 10600,
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
-          "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "co2_kg": 191.32,
+          "estimated_price_gbp": 1090.27
         }
       ]
     },
@@ -1030,8 +1030,8 @@
           "distance_km": 6370,
           "distance_miles": 3959,
           "estimated_travel_time_hours": 8.0,
-          "co2_kg": 540,
-          "estimated_price_gbp": 1019.2
+          "co2_kg": 161.596,
+          "estimated_price_gbp": 846.81
         },
         {
           "office_name": "London",
@@ -1039,8 +1039,8 @@
           "distance_km": 890,
           "distance_miles": 553,
           "estimated_travel_time_hours": 2.0,
-          "co2_kg": 50,
-          "estimated_price_gbp": 142.4
+          "co2_kg": 7.439,
+          "estimated_price_gbp": 230.51
         },
         {
           "office_name": "Paris",
@@ -1048,8 +1048,8 @@
           "distance_km": 890,
           "distance_miles": 553,
           "estimated_travel_time_hours": 2.0,
-          "co2_kg": 50,
-          "estimated_price_gbp": 142.4
+          "co2_kg": 5.301,
+          "estimated_price_gbp": 232.22
         },
         {
           "office_name": "Mumbai",
@@ -1057,8 +1057,8 @@
           "distance_km": 10500,
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "co2_kg": 149.417,
+          "estimated_price_gbp": 960.68
         },
         {
           "office_name": "Dubai",
@@ -1066,8 +1066,8 @@
           "distance_km": 10500,
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "co2_kg": 112.195,
+          "estimated_price_gbp": 1020.11
         },
         {
           "office_name": "Singapore",
@@ -1075,8 +1075,8 @@
           "distance_km": 10500,
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "co2_kg": 303.748,
+          "estimated_price_gbp": 924.56
         },
         {
           "office_name": "Hong Kong",
@@ -1084,8 +1084,8 @@
           "distance_km": 10500,
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "co2_kg": 171.521,
+          "estimated_price_gbp": 834.32
         },
         {
           "office_name": "Shanghai",
@@ -1093,8 +1093,8 @@
           "distance_km": 10500,
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "co2_kg": 225.612,
+          "estimated_price_gbp": 945.01
         },
         {
           "office_name": "Geneva",
@@ -1102,8 +1102,8 @@
           "distance_km": 10600,
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
-          "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "co2_kg": 5.118,
+          "estimated_price_gbp": 967.38
         },
         {
           "office_name": "Aarhus",
@@ -1112,7 +1112,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 995.2
         },
         {
           "office_name": "Sydney",
@@ -1121,7 +1121,7 @@
           "distance_miles": 4855,
           "estimated_travel_time_hours": 10.0,
           "co2_kg": 900,
-          "estimated_price_gbp": 1248.0
+          "estimated_price_gbp": 800.08
         },
         {
           "office_name": "Wroclaw",
@@ -1129,8 +1129,8 @@
           "distance_km": 10500,
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "co2_kg": 8.517,
+          "estimated_price_gbp": 874.05
         },
         {
           "office_name": "Budapest",
@@ -1138,8 +1138,8 @@
           "distance_km": 10600,
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
-          "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "co2_kg": 6.538,
+          "estimated_price_gbp": 1090.16
         }
       ]
     },
@@ -1157,8 +1157,8 @@
           "distance_km": 6290,
           "distance_miles": 3907,
           "estimated_travel_time_hours": 8.0,
-          "co2_kg": 530,
-          "estimated_price_gbp": 1006.4
+          "co2_kg": 158.196,
+          "estimated_price_gbp": 789.47
         },
         {
           "office_name": "London",
@@ -1166,8 +1166,8 @@
           "distance_km": 830,
           "distance_miles": 516,
           "estimated_travel_time_hours": 1.5,
-          "co2_kg": 50,
-          "estimated_price_gbp": 132.8
+          "co2_kg": 6.971,
+          "estimated_price_gbp": 244.17
         },
         {
           "office_name": "Paris",
@@ -1175,8 +1175,8 @@
           "distance_km": 830,
           "distance_miles": 516,
           "estimated_travel_time_hours": 1.5,
-          "co2_kg": 50,
-          "estimated_price_gbp": 132.8
+          "co2_kg": 4.786,
+          "estimated_price_gbp": 241.43
         },
         {
           "office_name": "Mumbai",
@@ -1185,7 +1185,7 @@
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
           "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "estimated_price_gbp": 1070.96
         },
         {
           "office_name": "Dubai",
@@ -1193,8 +1193,8 @@
           "distance_km": 10600,
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
-          "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "co2_kg": 153.257,
+          "estimated_price_gbp": 1097.84
         },
         {
           "office_name": "Singapore",
@@ -1203,7 +1203,7 @@
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
           "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "estimated_price_gbp": 927.54
         },
         {
           "office_name": "Hong Kong",
@@ -1212,7 +1212,7 @@
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
           "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "estimated_price_gbp": 877.44
         },
         {
           "office_name": "Shanghai",
@@ -1221,7 +1221,7 @@
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
           "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "estimated_price_gbp": 967.75
         },
         {
           "office_name": "Zurich",
@@ -1229,8 +1229,8 @@
           "distance_km": 10600,
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
-          "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "co2_kg": 5.374,
+          "estimated_price_gbp": 1075.3
         },
         {
           "office_name": "Aarhus",
@@ -1239,7 +1239,7 @@
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
           "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "estimated_price_gbp": 974.12
         },
         {
           "office_name": "Sydney",
@@ -1248,7 +1248,7 @@
           "distance_miles": 4855,
           "estimated_travel_time_hours": 10.0,
           "co2_kg": 900,
-          "estimated_price_gbp": 1248.0
+          "estimated_price_gbp": 726.87
         },
         {
           "office_name": "Wroclaw",
@@ -1257,7 +1257,7 @@
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
           "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "estimated_price_gbp": 988.01
         },
         {
           "office_name": "Budapest",
@@ -1265,8 +1265,8 @@
           "distance_km": 10600,
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
-          "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "co2_kg": 12.527,
+          "estimated_price_gbp": 1065.74
         }
       ]
     },
@@ -1285,7 +1285,7 @@
           "distance_miles": 3872,
           "estimated_travel_time_hours": 8.0,
           "co2_kg": 520,
-          "estimated_price_gbp": 996.8
+          "estimated_price_gbp": 764.72
         },
         {
           "office_name": "London",
@@ -1294,7 +1294,7 @@
           "distance_miles": 560,
           "estimated_travel_time_hours": 2.0,
           "co2_kg": 55,
-          "estimated_price_gbp": 144.0
+          "estimated_price_gbp": 224.42
         },
         {
           "office_name": "Paris",
@@ -1303,7 +1303,7 @@
           "distance_miles": 560,
           "estimated_travel_time_hours": 2.0,
           "co2_kg": 55,
-          "estimated_price_gbp": 144.0
+          "estimated_price_gbp": 254.09
         },
         {
           "office_name": "Mumbai",
@@ -1312,7 +1312,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 843.39
         },
         {
           "office_name": "Dubai",
@@ -1321,7 +1321,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 866.51
         },
         {
           "office_name": "Singapore",
@@ -1330,7 +1330,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 893.22
         },
         {
           "office_name": "Hong Kong",
@@ -1339,7 +1339,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 987.15
         },
         {
           "office_name": "Shanghai",
@@ -1348,7 +1348,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 1002.87
         },
         {
           "office_name": "Zurich",
@@ -1357,7 +1357,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 1053.49
         },
         {
           "office_name": "Geneva",
@@ -1366,7 +1366,7 @@
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
           "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "estimated_price_gbp": 1080.15
         },
         {
           "office_name": "Aarhus",
@@ -1375,7 +1375,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 967.2
         },
         {
           "office_name": "Sydney",
@@ -1384,7 +1384,7 @@
           "distance_miles": 4855,
           "estimated_travel_time_hours": 10.0,
           "co2_kg": 900,
-          "estimated_price_gbp": 1248.0
+          "estimated_price_gbp": 886.88
         },
         {
           "office_name": "Wroclaw",
@@ -1393,7 +1393,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 850.39
         },
         {
           "office_name": "Budapest",
@@ -1402,7 +1402,7 @@
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
           "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "estimated_price_gbp": 847.23
         }
       ]
     },
@@ -1421,7 +1421,7 @@
           "distance_miles": 9930,
           "estimated_travel_time_hours": 20.0,
           "co2_kg": 1700,
-          "estimated_price_gbp": 2556.8
+          "estimated_price_gbp": 1159.77
         },
         {
           "office_name": "London",
@@ -1430,7 +1430,7 @@
           "distance_miles": 10510,
           "estimated_travel_time_hours": 21.0,
           "co2_kg": 1800,
-          "estimated_price_gbp": 2704.0
+          "estimated_price_gbp": 1464.66
         },
         {
           "office_name": "Paris",
@@ -1439,7 +1439,7 @@
           "distance_miles": 10510,
           "estimated_travel_time_hours": 21.0,
           "co2_kg": 1800,
-          "estimated_price_gbp": 2704.0
+          "estimated_price_gbp": 1244.88
         },
         {
           "office_name": "Mumbai",
@@ -1448,7 +1448,7 @@
           "distance_miles": 4855,
           "estimated_travel_time_hours": 10.0,
           "co2_kg": 900,
-          "estimated_price_gbp": 1248.0
+          "estimated_price_gbp": 748.11
         },
         {
           "office_name": "Dubai",
@@ -1456,8 +1456,8 @@
           "distance_km": 7800,
           "distance_miles": 4855,
           "estimated_travel_time_hours": 10.0,
-          "co2_kg": 900,
-          "estimated_price_gbp": 1248.0
+          "co2_kg": 501.102,
+          "estimated_price_gbp": 927.15
         },
         {
           "office_name": "Singapore",
@@ -1465,8 +1465,8 @@
           "distance_km": 7800,
           "distance_miles": 4855,
           "estimated_travel_time_hours": 10.0,
-          "co2_kg": 900,
-          "estimated_price_gbp": 1248.0
+          "co2_kg": 122.214,
+          "estimated_price_gbp": 769.27
         },
         {
           "office_name": "Hong Kong",
@@ -1474,8 +1474,8 @@
           "distance_km": 7800,
           "distance_miles": 4855,
           "estimated_travel_time_hours": 10.0,
-          "co2_kg": 900,
-          "estimated_price_gbp": 1248.0
+          "co2_kg": 225.839,
+          "estimated_price_gbp": 876.94
         },
         {
           "office_name": "Shanghai",
@@ -1483,8 +1483,8 @@
           "distance_km": 7800,
           "distance_miles": 4855,
           "estimated_travel_time_hours": 10.0,
-          "co2_kg": 900,
-          "estimated_price_gbp": 1248.0
+          "co2_kg": 342.291,
+          "estimated_price_gbp": 943.21
         },
         {
           "office_name": "Zurich",
@@ -1493,7 +1493,7 @@
           "distance_miles": 4855,
           "estimated_travel_time_hours": 10.0,
           "co2_kg": 900,
-          "estimated_price_gbp": 1248.0
+          "estimated_price_gbp": 789.13
         },
         {
           "office_name": "Geneva",
@@ -1502,7 +1502,7 @@
           "distance_miles": 4855,
           "estimated_travel_time_hours": 10.0,
           "co2_kg": 900,
-          "estimated_price_gbp": 1248.0
+          "estimated_price_gbp": 931.61
         },
         {
           "office_name": "Aarhus",
@@ -1511,7 +1511,7 @@
           "distance_miles": 4855,
           "estimated_travel_time_hours": 10.0,
           "co2_kg": 900,
-          "estimated_price_gbp": 1248.0
+          "estimated_price_gbp": 906.01
         },
         {
           "office_name": "Wroclaw",
@@ -1520,7 +1520,7 @@
           "distance_miles": 4855,
           "estimated_travel_time_hours": 10.0,
           "co2_kg": 900,
-          "estimated_price_gbp": 1248.0
+          "estimated_price_gbp": 729.84
         },
         {
           "office_name": "Budapest",
@@ -1529,7 +1529,7 @@
           "distance_miles": 4855,
           "estimated_travel_time_hours": 10.0,
           "co2_kg": 900,
-          "estimated_price_gbp": 1248.0
+          "estimated_price_gbp": 723.33
         }
       ]
     },
@@ -1548,7 +1548,7 @@
           "distance_miles": 3959,
           "estimated_travel_time_hours": 8.5,
           "co2_kg": 540,
-          "estimated_price_gbp": 1019.2
+          "estimated_price_gbp": 661.6
         },
         {
           "office_name": "London",
@@ -1557,7 +1557,7 @@
           "distance_miles": 721,
           "estimated_travel_time_hours": 2.5,
           "co2_kg": 60,
-          "estimated_price_gbp": 185.6
+          "estimated_price_gbp": 308.26
         },
         {
           "office_name": "Paris",
@@ -1566,7 +1566,7 @@
           "distance_miles": 721,
           "estimated_travel_time_hours": 2.5,
           "co2_kg": 60,
-          "estimated_price_gbp": 185.6
+          "estimated_price_gbp": 286.54
         },
         {
           "office_name": "Mumbai",
@@ -1575,7 +1575,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 1064.77
         },
         {
           "office_name": "Dubai",
@@ -1584,7 +1584,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 1093.88
         },
         {
           "office_name": "Singapore",
@@ -1593,7 +1593,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 1025.33
         },
         {
           "office_name": "Hong Kong",
@@ -1602,7 +1602,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 1065.88
         },
         {
           "office_name": "Shanghai",
@@ -1611,7 +1611,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 996.39
         },
         {
           "office_name": "Zurich",
@@ -1619,8 +1619,8 @@
           "distance_km": 10500,
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
-          "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "co2_kg": 10.552,
+          "estimated_price_gbp": 1062.82
         },
         {
           "office_name": "Geneva",
@@ -1629,7 +1629,7 @@
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
           "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "estimated_price_gbp": 885.07
         },
         {
           "office_name": "Aarhus",
@@ -1638,7 +1638,7 @@
           "distance_miles": 6529,
           "estimated_travel_time_hours": 13.0,
           "co2_kg": 1200,
-          "estimated_price_gbp": 1680.0
+          "estimated_price_gbp": 999.35
         },
         {
           "office_name": "Sydney",
@@ -1647,7 +1647,7 @@
           "distance_miles": 4855,
           "estimated_travel_time_hours": 10.0,
           "co2_kg": 900,
-          "estimated_price_gbp": 1248.0
+          "estimated_price_gbp": 926.19
         },
         {
           "office_name": "Budapest",
@@ -1656,7 +1656,7 @@
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
           "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "estimated_price_gbp": 896.96
         }
       ]
     },
@@ -1675,7 +1675,7 @@
           "distance_miles": 4020,
           "estimated_travel_time_hours": 8.5,
           "co2_kg": 550,
-          "estimated_price_gbp": 1035.2
+          "estimated_price_gbp": 721.67
         },
         {
           "office_name": "London",
@@ -1683,8 +1683,8 @@
           "distance_km": 1450,
           "distance_miles": 902,
           "estimated_travel_time_hours": 2.5,
-          "co2_kg": 65,
-          "estimated_price_gbp": 232.0
+          "co2_kg": 18.965,
+          "estimated_price_gbp": 353.22
         },
         {
           "office_name": "Paris",
@@ -1692,8 +1692,8 @@
           "distance_km": 1450,
           "distance_miles": 902,
           "estimated_travel_time_hours": 2.5,
-          "co2_kg": 65,
-          "estimated_price_gbp": 232.0
+          "co2_kg": 15.907,
+          "estimated_price_gbp": 356.24
         },
         {
           "office_name": "Mumbai",
@@ -1702,7 +1702,7 @@
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
           "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "estimated_price_gbp": 888.68
         },
         {
           "office_name": "Dubai",
@@ -1710,8 +1710,8 @@
           "distance_km": 10600,
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
-          "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "co2_kg": 36.452,
+          "estimated_price_gbp": 863.46
         },
         {
           "office_name": "Singapore",
@@ -1720,7 +1720,7 @@
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
           "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "estimated_price_gbp": 1060.55
         },
         {
           "office_name": "Hong Kong",
@@ -1728,8 +1728,8 @@
           "distance_km": 10600,
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
-          "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "co2_kg": 198.732,
+          "estimated_price_gbp": 949.65
         },
         {
           "office_name": "Shanghai",
@@ -1737,8 +1737,8 @@
           "distance_km": 10600,
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
-          "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "co2_kg": 158.276,
+          "estimated_price_gbp": 986.84
         },
         {
           "office_name": "Zurich",
@@ -1746,8 +1746,8 @@
           "distance_km": 10600,
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
-          "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "co2_kg": 12.911,
+          "estimated_price_gbp": 999.41
         },
         {
           "office_name": "Geneva",
@@ -1755,8 +1755,8 @@
           "distance_km": 10600,
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
-          "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "co2_kg": 13.058,
+          "estimated_price_gbp": 878.35
         },
         {
           "office_name": "Aarhus",
@@ -1765,7 +1765,7 @@
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
           "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "estimated_price_gbp": 965.68
         },
         {
           "office_name": "Sydney",
@@ -1774,7 +1774,7 @@
           "distance_miles": 4855,
           "estimated_travel_time_hours": 10.0,
           "co2_kg": 900,
-          "estimated_price_gbp": 1248.0
+          "estimated_price_gbp": 726.54
         },
         {
           "office_name": "Wroclaw",
@@ -1783,7 +1783,7 @@
           "distance_miles": 6585,
           "estimated_travel_time_hours": 13.5,
           "co2_kg": 1250,
-          "estimated_price_gbp": 1696.0
+          "estimated_price_gbp": 880.54
         }
       ]
     }
