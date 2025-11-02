@@ -29,30 +29,34 @@ def find_best_flight(departure_airport, arrival_airport, arrival_datetime_str, l
             'price': price
         }
 
-    flights_before_target = _search_file(departure_airport, arrival_airport, latest_arrival_datetime.day, max_arrival_datetime=latest_arrival_datetime)
+    # Use year, month, day from latest_arrival_datetime
+    year = latest_arrival_datetime.year
+    month = latest_arrival_datetime.month
+    day = latest_arrival_datetime.day
+
+    flights_before_target = _search_file(departure_airport, arrival_airport, year, month, day, max_arrival_datetime=latest_arrival_datetime)
     if flights_before_target:
         best = max(flights_before_target, key=lambda x: x.get('SCHEDULED_ARRIVAL_DATE_TIME_UTC', ''))
         return flight_info(best)
 
     previous_day_dt = latest_arrival_datetime - timedelta(days=1)
-    if previous_day_dt.month == 6:
-        flights_on_previous_day = _search_file(departure_airport, arrival_airport, previous_day_dt.day)
-        if flights_on_previous_day:
-            best = max(flights_on_previous_day, key=lambda x: x.get('SCHEDULED_ARRIVAL_DATE_TIME_UTC', ''))
-            return flight_info(best)
+    flights_on_previous_day = _search_file(departure_airport, arrival_airport, previous_day_dt.year, previous_day_dt.month, previous_day_dt.day)
+    if flights_on_previous_day:
+        best = max(flights_on_previous_day, key=lambda x: x.get('SCHEDULED_ARRIVAL_DATE_TIME_UTC', ''))
+        return flight_info(best)
 
-    all_flights_on_day = _search_file(departure_airport, arrival_airport, latest_arrival_datetime.day, max_arrival_datetime=latest_arrival_datetime)
+    all_flights_on_day = _search_file(departure_airport, arrival_airport, year, month, day, max_arrival_datetime=latest_arrival_datetime)
     if all_flights_on_day:
         best = min(all_flights_on_day, key=lambda x: x.get('SCHEDULED_ARRIVAL_DATE_TIME_UTC', ''))
         return flight_info(best)
 
     return None
 
-def _search_file(departure_airport, arrival_airport, day, max_arrival_datetime=None):
-    """Helper function to search a single day's flight data."""
+def _search_file(departure_airport, arrival_airport, year, month, day, max_arrival_datetime=None):
+    """Helper function to search a single day's flight data in data/2024/{month}/{day}.csv."""
     flights = []
     file_name = f"{day:02d}.csv"
-    file_path = os.path.join('data', '06', file_name)
+    file_path = os.path.join('data', str(year), f"{month:02d}", file_name)
 
     if not os.path.exists(file_path):
         return []
@@ -117,23 +121,23 @@ def _calculate_duration_utc(departure_utc_str, arrival_utc_str):
     except (ValueError, TypeError):
         return 0 # Return 0 if formats are invalid
 
-if __name__ == '__main__':
-    # Example usage:
-    arrival_datetime = "2024-06-22T12:00:00Z"
-    depart_airport = "LHR"
-    arrive_airport = "LAX"
-    leeway = 3 # 3 hours of leeway
+# if __name__ == '__main__':
+#     # Example usage:
+#     arrival_datetime = "2024-06-22T12:00:00Z"
+#     depart_airport = "LHR"
+#     arrive_airport = "LAX"
+#     leeway = 3 # 3 hours of leeway
     
-    best_flight = find_best_flight(depart_airport, arrive_airport, arrival_datetime, leeway_hours=leeway)
+#     best_flight = find_best_flight(depart_airport, arrive_airport, arrival_datetime, leeway_hours=leeway)
     
-    if best_flight:
-        print(f"Best flight found from {depart_airport} to {arrive_airport} near {arrival_datetime} with at least {leeway} hours leeway:")
-        print(f"Departure: {best_flight['departure_time']}")
-        print(f"Arrival: {best_flight['arrival_time']}")
-        print(f"Duration: {best_flight['duration']} mins")
-        print(f"Estimated Price: £{best_flight['price']}")
-    else:
-        print(f"No flights found from {depart_airport} to {arrive_airport} near {arrival_datetime} with the specified leeway.")
+#     if best_flight:
+#         print(f"Best flight found from {depart_airport} to {arrive_airport} near {arrival_datetime} with at least {leeway} hours leeway:")
+#         print(f"Departure: {best_flight['departure_time']}")
+#         print(f"Arrival: {best_flight['arrival_time']}")
+#         print(f"Duration: {best_flight['duration']} mins")
+#         print(f"Estimated Price: £{best_flight['price']}")
+#     else:
+#         print(f"No flights found from {depart_airport} to {arrive_airport} near {arrival_datetime} with the specified leeway.")
 
-    best_flight = find_best_flight("LHR", "CDG", "2024-06-15T12:00:00Z", leeway_hours=3)
-    print(best_flight)
+#     best_flight = find_best_flight("LHR", "CDG", "2024-06-15T12:00:00Z", leeway_hours=3)
+#     print(best_flight)
