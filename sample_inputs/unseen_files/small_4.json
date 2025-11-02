@@ -1,0 +1,21 @@
+{
+    "attendees": {
+        "Hong Kong": 15,
+        "Shanghai": 11,
+        "Aarhus": 3,
+        "London": 3,
+        "Dubai": 8,
+        "Zurich": 25,
+        "Wroclaw": 9,
+        "Sydney": 25,
+        "Mumbai": 10
+    },
+    "availability_window": {
+        "start": "2025-05-05T09:15:00Z",
+        "end": "2025-05-07T15:00:00Z"
+    },
+    "event_duration": {
+        "days": 0,
+        "hours": 4
+    }
+}

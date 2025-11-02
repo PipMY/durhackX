@@ -1,0 +1,24 @@
+{
+    "attendees": {
+        "Mumbai": 14,
+        "Dubai": 21,
+        "Aarhus": 15,
+        "Sydney": 6,
+        "Paris": 18,
+        "London": 15,
+        "Zurich": 20,
+        "Geneva": 24,
+        "Singapore": 7,
+        "Wroclaw": 7,
+        "Shanghai": 13,
+        "Budapest": 17
+    },
+    "availability_window": {
+        "start": "2025-05-05T07:45:00Z",
+        "end": "2025-05-07T18:45:00Z"
+    },
+    "event_duration": {
+        "days": 0,
+        "hours": 7
+    }
+}

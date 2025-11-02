@@ -1,0 +1,20 @@
+{
+    "attendees": {
+        "Paris": 12,
+        "Geneva": 5,
+        "Wroclaw": 23,
+        "Mumbai": 3,
+        "Singapore": 22,
+        "Dubai": 2,
+        "London": 24,
+        "Budapest": 23
+    },
+    "availability_window": {
+        "start": "2024-11-13T09:00:00Z",
+        "end": "2024-11-26T18:00:00Z"
+    },
+    "event_duration": {
+        "days": 0,
+        "hours": 18
+    }
+}

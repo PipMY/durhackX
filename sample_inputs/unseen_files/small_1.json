@@ -1,0 +1,15 @@
+{
+    "_comment": "Hard seen test file (includes all office locations we could ask you)",
+    "attendees": {
+        "Budapest": 8,
+        "London": 3
+    },
+    "availability_window": {
+        "start": "2024-05-05T07:00:00Z",
+        "end": "2024-05-07T18:15:00Z"
+    },
+    "event_duration": {
+        "days": 0,
+        "hours": 8
+    }
+}

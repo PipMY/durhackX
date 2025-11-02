@@ -1,0 +1,17 @@
+{
+    "attendees": {
+        "Paris": 23,
+        "Dubai": 7,
+        "Hong Kong": 8,
+        "Shanghai": 6,
+        "Mumbai": 24
+    },
+    "availability_window": {
+        "start": "2023-12-01T10:30:00Z",
+        "end": "2023-12-15T15:30:00Z"
+    },
+    "event_duration": {
+        "days": 0,
+        "hours": 15
+    }
+}

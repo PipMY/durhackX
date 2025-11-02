@@ -1,0 +1,23 @@
+{
+    "attendees": {
+        "Singapore": 17,
+        "Hong Kong": 20,
+        "Mumbai": 20,
+        "Geneva": 24,
+        "Shanghai": 6,
+        "Dubai": 8,
+        "Aarhus": 9,
+        "Paris": 4,
+        "Sydney": 18,
+        "Wroclaw": 1,
+        "Budapest": 12
+    },
+    "availability_window": {
+        "start": "2024-05-29T08:00:00Z",
+        "end": "2024-06-05T18:00:00Z"
+    },
+    "event_duration": {
+        "days": 0,
+        "hours": 15
+    }
+}

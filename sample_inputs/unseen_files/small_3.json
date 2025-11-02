@@ -1,0 +1,16 @@
+{
+    "attendees": {
+        "Dubai": 13,
+        "Shanghai": 8,
+        "Sydney": 17,
+        "Aarhus": 1
+    },
+    "availability_window": {
+        "start": "2025-05-01T10:30:00Z",
+        "end": "2025-05-05T15:00:00Z"
+    },
+    "event_duration": {
+        "days": 0,
+        "hours": 5
+    }
+}

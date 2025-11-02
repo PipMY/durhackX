@@ -1,0 +1,19 @@
+{
+    "attendees": {
+        "Dubai": 25,
+        "Geneva": 3,
+        "Budapest": 14,
+        "London": 23,
+        "Shanghai": 14,
+        "Sydney": 1,
+        "Hong Kong": 19
+    },
+    "availability_window": {
+        "start": "2025-02-22T08:45:00Z",
+        "end": "2025-02-27T16:15:00Z"
+    },
+    "event_duration": {
+        "days": 0,
+        "hours": 14
+    }
+}

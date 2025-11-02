@@ -1,0 +1,14 @@
+{
+    "attendees": {
+        "London": 2,
+        "Dubai": 14
+    },
+    "availability_window": {
+        "start": "2024-04-22T08:30:00Z",
+        "end": "2024-04-25T15:45:00Z"
+    },
+    "event_duration": {
+        "days": 1,
+        "hours": 10
+    }
+}
