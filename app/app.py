@@ -1,5 +1,14 @@
 import streamlit as st
 import time
+import sys
+from pathlib import Path
+import json
+
+# ---------- PATH SETUP ----------
+ROOT_DIR = Path(__file__).resolve().parent.parent
+sys.path.append(str(ROOT_DIR))
+
+from src.optimiser import run_optimization
 
 # ---------- PAGE CONFIG ----------
 st.set_page_config(
@@ -8,14 +17,12 @@ st.set_page_config(
 )
 
 # ---------- INITIAL STATE ----------
-# Initialize session state for loading
 if "loading" not in st.session_state:
     st.session_state.loading = False
 
-# ---------- CUSTOM STYLE (Consolidated CSS) ----------
+# ---------- CUSTOM STYLE ----------
 st.markdown("""
     <style>
-        /* Base App Styles */
         .stApp {
             background-color: #0d072c !important;
             color: white !important;
@@ -46,7 +53,6 @@ st.markdown("""
         }
 
         /* --- Full-Screen Planet Animation Styles (200px size) --- */
-        /* Custom overlay to cover the whole screen and center content */
         #overlay {
             position: fixed;
             top: 0; left: 0;
@@ -59,7 +65,6 @@ st.markdown("""
             justify-content: center; 
         }
 
-        /* Styles for the smaller planet (200px) */
         .planet-container {
             border-radius: 50%;
             box-shadow: 5px -3px 10px 3px #5e90f1;
@@ -73,7 +78,6 @@ st.markdown("""
             height: 200px; 
             width: 200px;  
         }
-        
         .night {
             animation: rotate-night 80s linear infinite;
             background-image: url(https://www.solarsystemscope.com/textures/download/2k_earth_nightmap.jpg);
@@ -88,7 +92,7 @@ st.markdown("""
             border-left: solid 1px black;
             border-radius: 50%;
             box-shadow: 5px 0 20px 10px #040615 inset; 
-            margin-left: 44px; /* Scaled margin */
+            margin-left: 44px; 
             position: absolute;
             z-index: 3;
         }
@@ -98,7 +102,7 @@ st.markdown("""
             background-size: 200%;
             border-radius: 50%;     
             box-shadow: 5px 0 20px 10px #040615 inset, -9px 0px 20px 10px #5e90f1 inset;
-            margin-left: 40px; /* Scaled margin */
+            margin-left: 40px; 
             opacity: 0.45;
             position: absolute;
             z-index: 4;
@@ -107,12 +111,10 @@ st.markdown("""
             background: transparent;
             border-radius: 50%;
             box-shadow: -5px 0 10px 1px #152b57 inset, 5px 0 10px 1px #040615 inset;
-            margin-left: 0;
             position: absolute;
             z-index: 5;
         }
 
-        /* Keyframe Animations */
         @keyframes rotate-day {
             0% { background-position: 120% 0; }
             100% { background-position: -80% 0; }
@@ -129,11 +131,8 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# ------------------------------------------------
-# ---------- LOADING SCREEN LOGIC (The Planet) -----
-# ------------------------------------------------
+# ---------- LOADING SCREEN ----------
 if st.session_state.loading:
-    # Render the full-screen loading overlay
     st.markdown(
         """
         <div id='overlay'>
@@ -150,38 +149,63 @@ if st.session_state.loading:
         """,
         unsafe_allow_html=True
     )
-    
-    # Simulate the calculation time
     time.sleep(3)
-    
-    # After simulation, turn off loading and rerun to show main content
     st.session_state.loading = False
     st.rerun()
 
-# ------------------------------------------------
-# ---------- SIDEBAR -----------------------------
-# ------------------------------------------------
+# ---------- SIDEBAR ----------
 st.sidebar.header("Settings")
 st.sidebar.markdown("Upload your data and adjust preferences:")
 
-w_co2 = st.sidebar.slider("Weight for CO₂ (vs Fairness)", 0.0, 1.0, 0.5, 0.1, key="co2_weight")
+# Three sliders for weighting
+w_co2 = st.sidebar.slider("Weight for CO₂", 0.0, 1.0, 0.33, 0.01)
+w_mean = st.sidebar.slider("Weight for Mean Travel Time", 0.0, 1.0, 0.33, 0.01)
+w_cost = st.sidebar.slider("Weight for Cost", 0.0, 1.0, 0.34, 0.01)
+
+# Normalize so total = 1
+total = w_co2 + w_mean + w_cost
+if total > 0:
+    w_co2 /= total
+    w_mean /= total
+    w_cost /= total
+
+st.sidebar.caption(f"Total Weight: {w_co2 + w_mean + w_cost:.2f} (auto-normalized to 1)")
+
 uploaded_file = st.sidebar.file_uploader("Upload attendee data (JSON)", type=["json"], key="data_uploader")
 
-# RUN BUTTON: Always triggers the loading screen for testing
 if st.sidebar.button("**Run Optimization**"):
-    st.session_state.loading = True
-    st.rerun() 
+    if uploaded_file is None:
+        st.sidebar.warning("Please upload a JSON file first.")
+    else:
+        try:
+            attendees = json.load(uploaded_file)
+            weights = {
+                "co2": w_co2,
+                "mean_time": w_mean,
+                "cost": w_cost
+            }
+
+            st.session_state.loading = True
+            st.rerun()
+
+            results = run_optimization(attendees["attendees"], weights)
+            best_city = results["best_office"]
+            best_metrics = results["metrics"]
+
+            st.metric("Best City", best_city)
+            st.metric("Total CO₂", f'{best_metrics["total_co2"]} kg')
+            st.metric("Fairness (stddev hrs)", best_metrics["stddev_travel_hours"])
+
+        except Exception as e:
+            st.sidebar.error(f"Error running optimization: {e}")
 
 st.sidebar.divider()
 st.sidebar.caption("Created at DurHack — Team BridgeBuilders")
 
-# ------------------------------------------------
-# ---------- HEADER AND MAIN APP CONTENT ---------
-# ------------------------------------------------
+# ---------- MAIN LAYOUT ----------
 col_logo, col_title = st.columns([0.15, 0.85])
 with col_logo:
-    # REVERTED: Using the intended logo file
-    st.image("qrt-logo.svg", width=100) 
+    st.image("qrt-logo.svg", width=100)
 with col_title:
     st.title("EcoMeet Optimizer")
     st.subheader("Find the most sustainable and fair event location.")
@@ -193,12 +217,12 @@ col1, col2 = st.columns([3, 1])
 with col1:
     st.header("Map Visualization")
     st.info("Map will display the best city and travel paths here.")
-    st.empty() 
+    st.empty()
 
     st.divider()
     st.header("Candidate Comparison")
     st.info("Comparison table and Pareto plot will appear here.")
-    st.empty() 
+    st.empty()
 
 with col2:
     st.header("Summary")
