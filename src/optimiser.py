@@ -187,14 +187,14 @@ if total_weight:
         with open(AIRPORTS_CSV, newline="", encoding="utf-8") as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
-                iata = row.get("iata") or row.get("IATA") or row.get("iata_code")
+                icao = row.get("icao") or row.get("IATA") or row.get("iata_code")
                 lat = row.get("lat") or row.get("latitude")
                 lon = row.get("lon") or row.get("longitude")
-                if not all([iata, lat, lon]):
+                if not all([icao, lat, lon]):
                     continue
                 try:
                     airports.append({
-                        "iata": iata.strip(),
+                        "icao": icao.strip(),
                         "lat": float(lat),
                         "lon": float(lon),
                         "name": row.get("name", ""),
@@ -212,7 +212,7 @@ if total_weight:
     nearest_dist = float("inf")
     
     for airport in airports:
-        if airport["iata"] in office_iatas:
+        if airport.get("icao") in office_iatas:
             continue
         dist = haversine(centroid_lat, centroid_lon, airport["lat"], airport["lon"])
         if dist < nearest_dist:
